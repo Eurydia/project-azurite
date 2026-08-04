@@ -1,10 +1,12 @@
 import IconButton from '@mui/material/IconButton'
+import type { IconButtonProps } from '@mui/material/IconButton'
 import type { FC, ReactNode } from 'react'
 
 export const ExternalLink: FC<{
   href: string
   target?: string
   rel?: string
+  color?: IconButtonProps['color']
   children: ReactNode
 }> = (props) => {
   return (
@@ -12,9 +14,9 @@ export const ExternalLink: FC<{
       disableTouchRipple
       component="a"
       href={props.href}
-      target={'_blank'}
-      rel={'noreferrer'}
-      color="primary"
+      target={props.target ?? '_blank'}
+      rel={props.rel ?? 'noreferrer'}
+      color={props.color ?? 'primary'}
     >
       {props.children}
     </IconButton>

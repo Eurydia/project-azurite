@@ -1,6 +1,6 @@
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import GoogleIcon from '@mui/icons-material/Google'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { CopyTextButton } from '#/components/common/copy-text-button'
@@ -39,7 +39,7 @@ export const AppFooter: FC = () => {
         }}
       >
         <CopyTextButton text="tphuttharaksabusiness@gmail.com">
-          <GoogleIcon color="action" />
+          <EmailOutlinedIcon color="action" />
         </CopyTextButton>
         <ExternalLink href="https://github.com/Eurydia">
           <GitHubIcon color="action" />

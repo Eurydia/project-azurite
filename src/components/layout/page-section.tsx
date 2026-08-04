@@ -1,5 +1,6 @@
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import { AnchoredHeading } from '#/components/common/anchored-heading'
 import type { FC, ReactNode } from 'react'
 
 const formatEntryCount = (count: number) => {
@@ -11,12 +12,13 @@ const formatEntryCount = (count: number) => {
 export const PageSection: FC<{
   id: string
   title: string
+  anchorText?: string
   body?: string
   count?: number
   children: ReactNode
 }> = (props) => {
   return (
-    <Stack id={props.id} spacing={4} useFlexGap>
+    <Stack spacing={4} useFlexGap>
       <Stack
         direction={{
           xs: 'column',
@@ -37,7 +39,13 @@ export const PageSection: FC<{
           paddingBottom: theme.spacing(1.25),
         })}
       >
-        <Typography variant="siteSection">{props.title}</Typography>
+        <AnchoredHeading
+          id={props.id}
+          variant="siteSection"
+          anchorText={props.anchorText}
+        >
+          {props.title}
+        </AnchoredHeading>
         {typeof props.count === 'number' && (
           <Typography variant="siteSmall" color="primary">
             {formatEntryCount(props.count)}

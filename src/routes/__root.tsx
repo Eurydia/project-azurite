@@ -37,6 +37,10 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
+        name: 'msvalidate.01',
+        content: '2C963425BF0D92466FAE0F75189D6A6Ax',
+      },
+      {
         charSet: 'utf-8',
       },
       {

@@ -10,5 +10,5 @@ dist-ssr
 .output
 .vinxi
 __unconfig*
-todos.json
-.content-collections
+
+**/**.gen.ts
