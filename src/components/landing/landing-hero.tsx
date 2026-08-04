@@ -1,56 +1,32 @@
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { alpha } from '@mui/material/styles'
-import { RotatingHeroText } from '#/components/landing/rotating-hero-text'
-import type { FC } from 'react'
+import { TypewriterText } from '#/components/landing/rotating-hero-text'
+import { memo, type FC } from 'react'
 
-export const LandingHero: FC = () => {
-  const heroPhrases = [
-    'software engineer.',
-    'Stipendium Hungaricum scholar.',
-    'Eötvös Loránd University alumnus.',
-    'ex-tech lead @ GDGoC ELTE.',
-  ] as const
-  return (
-    <Stack
-      spacing={2}
-      useFlexGap
-      sx={(theme) => ({
-        position: 'relative',
-        maxInlineSize: theme.spacing(85),
-        paddingInlineStart: {
-          xs: theme.spacing(2),
-          sm: 0,
-        },
-        '::before': {
-          content: '""',
-          position: 'absolute',
-          insetBlockStart: theme.spacing(0.5),
-          insetBlockEnd: theme.spacing(0.5),
-          insetInlineStart: {
-            xs: 0,
-            sm: theme.spacing(-3.5),
-          },
-          inlineSize: theme.spacing(0.25),
-          borderRadius: theme.shape.borderRadius,
-          background: `linear-gradient(to bottom, ${theme.palette.primary.main}, ${alpha(theme.palette.primary.main, 0)})`,
-        },
-      })}
-    >
-      <Typography variant="siteMark" color="primary">
-        Portfolio
-      </Typography>
-      <Stack>
-        <Typography variant="siteDisplay" color="textPrimary">
-          Computer science graduate,
+const heroPhrases = [
+  'software engineer.',
+  'Stipendium Hungaricum recipient.',
+  'Eötvös Loránd University alumnus.',
+  'ex-tech lead @ GDGoC ELTE.',
+]
+
+export const LandingHero: FC = memo(
+  () => {
+    return (
+      <Stack spacing={2}>
+        <Stack sx={{ maxHeight: '40vh' }}>
+          <Typography variant="siteDisplay" color="textPrimary">
+            Computer science graduate,
+          </Typography>
+          <TypewriterText phrases={heroPhrases} />
+        </Stack>
+        <Typography variant="siteCopy" color="textSecondary">
+          I work across web systems, educational tools, research software, and
+          the practical details around deploying and maintaining them.
         </Typography>
-        <RotatingHeroText phrases={heroPhrases} />
       </Stack>
-
-      <Typography variant="siteCopy" color="textSecondary">
-        I work across web systems, educational tools, research software, and the
-        practical details around deploying and maintaining them.
-      </Typography>
-    </Stack>
-  )
-}
+    )
+  },
+  () => false,
+)

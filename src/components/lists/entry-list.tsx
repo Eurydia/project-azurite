@@ -1,16 +1,14 @@
 import Stack from '@mui/material/Stack'
 import { ShowMore } from '#/components/common/show-more'
-import { ListCard } from '#/components/lists/list-card'
 import { useVisibleItems } from '#/hooks/use-visible-items'
-import type { FC } from 'react'
-import type { HomeEntryItem } from '#/types/home'
+import { type FC, type ReactNode } from 'react'
 import Grid from '@mui/material/Grid'
 
 export const EntryList: FC<{
-  items: readonly HomeEntryItem[]
   initialVisibleItems?: number
   visibleItemIncrement?: number
   variant: 'stacked' | 'bento'
+  items: Array<ReactNode>
 }> = (props) => {
   const { hiddenCount, nextVisibleCount, showMore, visibleItems } =
     useVisibleItems(props.items, {
@@ -19,47 +17,17 @@ export const EntryList: FC<{
     })
 
   return (
-    <Stack spacing={3} useFlexGap>
-      {props.variant === 'stacked' ? (
-        <>
-          {visibleItems.map((item, index) => (
-            <ListCard
-              key={item.key}
-              index={String(index + 1).padStart(2, '0')}
-              label={item.period}
-              card={item.card}
-              readMore={item.detailed ? { article: item.detailed } : undefined}
-            />
-          ))}
-        </>
-      ) : (
-        <>
-          {visibleItems.slice(0, 1).map((item, index) => (
-            <ListCard
-              key={item.key}
-              index={String(index + 1).padStart(2, '0')}
-              label={item.period}
-              card={item.card}
-              readMore={item.detailed ? { article: item.detailed } : undefined}
-            />
-          ))}
-          <Grid container columns={2} spacing={3}>
-            {visibleItems.slice(1).map((item, index) => (
-              <Grid key={item.key} size={1}>
-                <ListCard
-                  index={String(index + 2).padStart(2, '0')}
-                  label={item.period}
-                  card={item.card}
-                  readMore={
-                    item.detailed ? { article: item.detailed } : undefined
-                  }
-                />
-              </Grid>
-            ))}
+    <Stack spacing={3}>
+      <Grid spacing={3} columns={2}>
+        {visibleItems.map((item, index) => (
+          <Grid
+            key={`item-${index}`}
+            size={{ xs: 2, md: props.variant === 'bento' && index < 2 ? 1 : 2 }}
+          >
+            {item}
           </Grid>
-        </>
-      )}
-
+        ))}
+      </Grid>
       <ShowMore
         hiddenCount={hiddenCount}
         nextVisibleCount={nextVisibleCount}

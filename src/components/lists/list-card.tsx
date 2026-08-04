@@ -1,46 +1,36 @@
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import CloseIcon from '@mui/icons-material/Close'
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import DialogContent from '@mui/material/DialogContent'
-import IconButton from '@mui/material/IconButton'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { alpha } from '@mui/material/styles'
-import { MarkdownArticle } from '#/components/content/markdown-article'
-import { useState } from 'react'
-import type { FC } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
-export const ListCard: FC<{
-  index: string
-  label?: string
-  card: string
-  readMore?: {
-    article: string
-  }
-}> = (props) => {
-  const [isReadMoreOpen, setIsReadMoreOpen] = useState(false)
+export const ListCard: FC<
+  PropsWithChildren<{
+    index: string
+    label?: string
+    card: string
+  }>
+> = (props) => {
+  // const [isReadMoreOpen, setIsReadMoreOpen] = useState(false)
 
-  const handleReadMoreOpen = () => {
-    setIsReadMoreOpen(true)
-  }
+  // const handleReadMoreOpen = () => {
+  //   setIsReadMoreOpen(true)
+  // }
 
-  const handleReadMoreClose = () => {
-    setIsReadMoreOpen(false)
-  }
+  // const handleReadMoreClose = () => {
+  //   setIsReadMoreOpen(false)
+  // }
 
-  const handleDialogClose = (
-    _event: object,
-    reason: 'backdropClick' | 'escapeKeyDown',
-  ) => {
-    if (reason === 'backdropClick') {
-      return
-    }
+  // const handleDialogClose = (
+  //   _event: object,
+  //   reason: 'backdropClick' | 'escapeKeyDown',
+  // ) => {
+  //   if (reason === 'backdropClick') {
+  //     return
+  //   }
 
-    handleReadMoreClose()
-  }
+  //   handleReadMoreClose()
+  // }
 
   return (
     <Paper
@@ -60,23 +50,33 @@ export const ListCard: FC<{
           left: 0,
           width: theme.spacing(1.5),
           height: theme.spacing(1.5),
-          borderTop: `2px solid ${alpha(theme.palette.primary.main, 0.68)}`,
-          borderLeft: `2px solid ${alpha(theme.palette.primary.main, 0.68)}`,
+          borderTop: `2px solid ${theme.alpha(theme.palette.primary.main, 0.68)}`,
+          borderLeft: `2px solid ${theme.alpha(theme.palette.primary.main, 0.68)}`,
           transition: theme.transitions.create([
             'border-color',
             'width',
             'height',
           ]),
         },
-        ':hover, :focus-within': {
-          borderColor: alpha(theme.palette.primary.main, 0.72),
+        ':hover': {
+          borderColor: theme.alpha(theme.palette.primary.main, 0.72),
           boxShadow: `${theme.spacing(0.5)} ${theme.spacing(0.5)} 0 ${theme.palette.primary.main}`,
+          '::before': {
+            width: theme.spacing(2.5),
+            height: theme.spacing(2.5),
+            borderTopColor: theme.palette.primary.main,
+            borderLeftColor: theme.palette.primary.main,
+          },
         },
-        ':hover::before, :focus-within::before': {
-          width: theme.spacing(2.5),
-          height: theme.spacing(2.5),
-          borderTopColor: theme.palette.primary.main,
-          borderLeftColor: theme.palette.primary.main,
+        ':focus-within': {
+          borderColor: theme.alpha(theme.palette.primary.main, 0.72),
+          boxShadow: `${theme.spacing(0.5)} ${theme.spacing(0.5)} 0 ${theme.palette.primary.main}`,
+          '::before': {
+            width: theme.spacing(2.5),
+            height: theme.spacing(2.5),
+            borderTopColor: theme.palette.primary.main,
+            borderLeftColor: theme.palette.primary.main,
+          },
         },
       })}
     >
@@ -105,8 +105,8 @@ export const ListCard: FC<{
             </Typography>
           )}
         </Stack>
-        <MarkdownArticle content={props.card} density="card" />
-        {props.readMore && (
+        {props.children}
+        {/* {props.readMore && (
           <Box>
             <Button
               disableRipple
@@ -119,9 +119,9 @@ export const ListCard: FC<{
               Read more
             </Button>
           </Box>
-        )}
+        )} */}
       </Stack>
-      {props.readMore && (
+      {/* {props.readMore && (
         <Dialog
           open={isReadMoreOpen}
           onClose={handleDialogClose}
@@ -146,7 +146,7 @@ export const ListCard: FC<{
             <MarkdownArticle content={props.readMore.article} />
           </DialogContent>
         </Dialog>
-      )}
+      )} */}
     </Paper>
   )
 }

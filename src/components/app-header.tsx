@@ -29,16 +29,13 @@ export const AppHeader: FC = () => {
         xs: 1.5,
         sm: 3.5,
       }}
-      useFlexGap
-      sx={(theme) => ({
+      sx={{
         alignItems: {
           xs: 'flex-start',
           sm: 'baseline',
         },
         justifyContent: 'space-between',
-        borderBottom: `1px solid ${theme.palette.divider}`,
-        paddingBottom: theme.spacing(1.5),
-      })}
+      }}
     >
       <Typography variant="siteCopy" color="textPrimary">
         Thanakorn Phuttharaksa

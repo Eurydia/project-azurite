@@ -3,18 +3,12 @@ import Typography from '@mui/material/Typography'
 import { AnchoredHeading } from '#/components/common/anchored-heading'
 import type { FC, ReactNode } from 'react'
 
-const formatEntryCount = (count: number) => {
-  const paddedCount = String(count).padStart(2, '0')
-
-  return `${paddedCount} ${count === 1 ? 'entry' : 'entries'}`
-}
-
 export const PageSection: FC<{
   id: string
   title: string
   anchorText?: string
   body?: string
-  count?: number
+  count: number
   children: ReactNode
 }> = (props) => {
   return (
@@ -28,16 +22,13 @@ export const PageSection: FC<{
           xs: 1,
           sm: 2,
         }}
-        useFlexGap
-        sx={(theme) => ({
+        sx={{
           alignItems: {
             xs: 'flex-start',
             sm: 'baseline',
           },
           justifyContent: 'space-between',
-          borderBottom: `1px solid ${theme.palette.divider}`,
-          paddingBottom: theme.spacing(1.25),
-        })}
+        }}
       >
         <AnchoredHeading
           id={props.id}
@@ -46,9 +37,9 @@ export const PageSection: FC<{
         >
           {props.title}
         </AnchoredHeading>
-        {typeof props.count === 'number' && (
-          <Typography variant="siteSmall" color="primary">
-            {formatEntryCount(props.count)}
+        {props.count !== undefined && (
+          <Typography variant="siteSmall" color="textDisabled">
+            {`${String(props.count).padStart(2, '0')} ${props.count === 1 ? 'entry' : 'entries'}`}
           </Typography>
         )}
       </Stack>

@@ -6,13 +6,7 @@ import { EntryList } from '#/components/lists/entry-list'
 import { AppFooter } from '#/components/app-footer'
 import { AppHeader } from '#/components/app-header'
 import { LandingHero } from '#/components/landing/landing-hero'
-import {
-  builtProjects,
-  educationItems,
-  experienceItems,
-  maintainedProjects,
-  researchItems,
-} from '#/content/home'
+import { ComputerScienceDegree } from '#/content/home/education/bsc-degree'
 
 export const Route = createFileRoute('/')({ component: HomeRoute, ssr: true })
 
@@ -27,14 +21,10 @@ function HomeRoute() {
         },
       })}
     >
-      <Stack spacing={{ xs: 7, md: 9 }} useFlexGap>
+      <Stack spacing={{ xs: 7, md: 9 }}>
         <AppHeader />
         <LandingHero />
-        <PageSection
-          id="maintained"
-          title="Projects I maintain"
-          count={maintainedProjects.length}
-        >
+        {/* <PageSection id="maintained" title="Projects I maintain">
           <EntryList items={maintainedProjects} variant="stacked" />
         </PageSection>
 
@@ -60,17 +50,17 @@ function HomeRoute() {
           count={experienceItems.length}
         >
           <EntryList items={experienceItems} variant="stacked" />
-        </PageSection>
+        </PageSection> */}
 
         <PageSection
           id="education"
           title="Education and certifications"
-          count={educationItems.length}
+          count={3}
         >
           <EntryList
             variant="bento"
-            items={educationItems}
             initialVisibleItems={3}
+            items={[<ComputerScienceDegree />]}
           />
         </PageSection>
         <AppFooter />
