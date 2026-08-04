@@ -10,10 +10,8 @@
     "generate-routes": "tsr generate",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint",
-    "format": "prettier --write . && eslint --fix",
-    "check": "prettier --check .",
-    "deploy": "pnpm run build && wrangler deploy"
+    "deploy": "pnpm run build && wrangler deploy",
+    "check": "pnpx @biomejs/biome check --write"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -29,6 +27,7 @@
     "@tanstack/react-router-ssr-query": "latest",
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
+    "canvas-confetti": "^1.9.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "typewriter-effect": "^2.22.0",
@@ -40,6 +39,7 @@
     "@rolldown/plugin-babel": "^0.2.3",
     "@tanstack/devtools-vite": "latest",
     "@tanstack/router-cli": "^1.132.0",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",

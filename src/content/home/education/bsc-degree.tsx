@@ -1,11 +1,11 @@
-import { ListCard } from '#/components/lists/list-card'
+import { ListCard } from '#/components/common/list-card'
 import Typography from '@mui/material/Typography'
 import { memo, type FC } from 'react'
 
 export const ComputerScienceDegree: FC = memo(
   () => {
     return (
-      <ListCard index={''} card={'sds'} label="August 2022 - February 2026">
+      <ListCard labelSecondary="August 2022 - February 2026">
         <Typography variant="siteCardTitle">
           {`Bachelor of Science in Computer Science with Honors`}
         </Typography>

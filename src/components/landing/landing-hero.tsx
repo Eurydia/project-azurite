@@ -1,25 +1,34 @@
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { alpha } from '@mui/material/styles'
-import { TypewriterText } from '#/components/landing/rotating-hero-text'
+import { TypewriterText } from '#/components/common/typewriter-text'
 import { memo, type FC } from 'react'
 
-const heroPhrases = [
+const PHRASES = [
   'software engineer.',
-  'Stipendium Hungaricum recipient.',
+  'Stipendium Hungaricum Scholarship recipient.',
   'Eötvös Loránd University alumnus.',
-  'ex-tech lead @ GDGoC ELTE.',
+  'ex-tech lead at Google Developer Group on Campus ELTE.',
 ]
 
 export const LandingHero: FC = memo(
   () => {
     return (
       <Stack spacing={2}>
-        <Stack sx={{ maxHeight: '40vh' }}>
+        <Stack>
           <Typography variant="siteDisplay" color="textPrimary">
             Computer science graduate,
           </Typography>
-          <TypewriterText phrases={heroPhrases} />
+          <Typography
+            variant="siteDisplay"
+            color="primary"
+            sx={{
+              fontStyle: 'italic',
+              maxWidth: { xs: '100%', md: '85%' },
+              minHeight: (t) => t.spacing(25),
+            }}
+          >
+            <TypewriterText phrases={PHRASES} />
+          </Typography>
         </Stack>
         <Typography variant="siteCopy" color="textSecondary">
           I work across web systems, educational tools, research software, and

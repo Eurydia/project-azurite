@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
@@ -6,32 +6,10 @@ import type { FC, PropsWithChildren } from 'react'
 
 export const ListCard: FC<
   PropsWithChildren<{
-    index: string
-    label?: string
-    card: string
+    labelSecondary?: string
+    labelPrimary?: string
   }>
 > = (props) => {
-  // const [isReadMoreOpen, setIsReadMoreOpen] = useState(false)
-
-  // const handleReadMoreOpen = () => {
-  //   setIsReadMoreOpen(true)
-  // }
-
-  // const handleReadMoreClose = () => {
-  //   setIsReadMoreOpen(false)
-  // }
-
-  // const handleDialogClose = (
-  //   _event: object,
-  //   reason: 'backdropClick' | 'escapeKeyDown',
-  // ) => {
-  //   if (reason === 'backdropClick') {
-  //     return
-  //   }
-
-  //   handleReadMoreClose()
-  // }
-
   return (
     <Paper
       variant="outlined"
@@ -40,8 +18,6 @@ export const ListCard: FC<
         overflow: 'visible',
         padding: theme.spacing(3),
         borderColor: theme.palette.divider,
-        borderRadius: 0,
-        backgroundColor: theme.palette.background.paper,
         transition: theme.transitions.create(['border-color', 'box-shadow']),
         '::before': {
           content: '""',
@@ -80,46 +56,28 @@ export const ListCard: FC<
         },
       })}
     >
-      <Stack spacing={3} useFlexGap>
+      <Stack spacing={3}>
         <Stack
           direction="row"
           spacing={1}
-          useFlexGap
           sx={{
             alignItems: 'center',
             justifyContent: 'space-between',
           }}
         >
-          <Typography variant="siteSmall" color="primary">
-            {props.index}
-          </Typography>
-          <Box
-            sx={(theme) => ({
-              flex: 1,
-              borderBlockStart: `1px solid ${theme.palette.divider}`,
-            })}
-          />
-          {props.label && (
+          {props.labelPrimary !== undefined && (
+            <Typography variant="siteSmall" color="primary">
+              {props.labelPrimary}
+            </Typography>
+          )}
+          <Divider flexItem />
+          {props.labelSecondary !== undefined && (
             <Typography variant="siteSmall" color="textSecondary">
-              {props.label}
+              {props.labelSecondary}
             </Typography>
           )}
         </Stack>
         {props.children}
-        {/* {props.readMore && (
-          <Box>
-            <Button
-              disableRipple
-              variant="text"
-              size="small"
-              color="primary"
-              endIcon={<ArrowForwardIcon />}
-              onClick={handleReadMoreOpen}
-            >
-              Read more
-            </Button>
-          </Box>
-        )} */}
       </Stack>
       {/* {props.readMore && (
         <Dialog
