@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -33,16 +34,18 @@ export const BlogCard: FC<
             justifyContent: "space-between",
           }}
         >
-          {props.labelPrimary !== undefined && (
-            <Typography variant="caption" color="textDisabled">
-              {props.labelPrimary}
-            </Typography>
-          )}
-          {props.labelSecondary !== undefined && (
-            <Typography variant="caption" color="textDisabled">
-              {props.labelSecondary}
-            </Typography>
-          )}
+          <Typography variant="caption" color="textDisabled">
+            {props.labelPrimary ?? ""}
+          </Typography>
+          <Box
+            sx={(t) => ({
+              flex: 1,
+              borderBlockStart: `1px solid ${t.palette.divider}`,
+            })}
+          />
+          <Typography variant="caption" color="textDisabled">
+            {props.labelSecondary ?? ""}
+          </Typography>
         </Stack>
         {props.children}
       </Stack>

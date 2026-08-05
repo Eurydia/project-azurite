@@ -1,6 +1,3 @@
-import "@fontsource-variable/inter/wght.css";
-import "@fontsource-variable/stix-two-text/wght.css";
-import "@fontsource-variable/stix-two-text/wght-italic.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { ThemeProvider } from "@mui/material/styles";

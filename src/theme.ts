@@ -1,3 +1,6 @@
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/stix-two-text/wght.css";
+import "@fontsource-variable/stix-two-text/wght-italic.css";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const documentFontFamily =
@@ -49,6 +52,7 @@ export const theme = responsiveFontSizes(
       fontWeightBold: 700,
     },
     components: {
+      MuiTypography: { defaultProps: { component: "span" } },
       MuiStack: {
         defaultProps: { useFlexGap: true },
       },

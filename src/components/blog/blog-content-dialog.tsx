@@ -2,17 +2,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
-import {
-  type FC,
-  type PropsWithChildren,
-  type ReactNode,
-  useCallback,
-  useState,
-} from "react";
+import Typography from "@mui/material/Typography";
+import { type FC, type PropsWithChildren, useCallback, useState } from "react";
 
 export const BlogContentDialog: FC<
   PropsWithChildren<{
-    renderTrigger: (triggerProps: { onClick: () => unknown }) => ReactNode;
+    triggerText: string;
   }>
 > = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +20,15 @@ export const BlogContentDialog: FC<
 
   return (
     <>
-      {props.renderTrigger({
-        onClick: handleOpen,
-      })}
+      <Typography
+        onClick={handleOpen}
+        component={"span"}
+        variant="caption"
+        color="primary"
+        sx={{ cursor: "pointer" }}
+      >
+        {props.triggerText}
+      </Typography>
       <Dialog
         fullWidth
         open={isOpen}

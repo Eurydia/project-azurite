@@ -1,3 +1,7 @@
-import { Cert$IeltsBlog } from "./ielts-academic";
+import { Certificate$IELTS } from "./ielts";
+import { Certificate$TOEIC } from "./toeic";
 
-export const CERTIFICATE_ENTRIES = [() => <Cert$IeltsBlog />] as const;
+export const CERTIFICATE_ENTRIES = [
+  () => <Certificate$TOEIC />,
+  () => <Certificate$IELTS />,
+] as const;

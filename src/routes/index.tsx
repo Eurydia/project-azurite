@@ -6,6 +6,7 @@ import { AppHeader } from "#/components/app-header";
 import { LandingHero } from "#/components/landmarks/landing-hero";
 import { BlogList } from "#/components/layout/blog-list";
 import { PageSection } from "#/components/layout/page-section";
+import { CERTIFICATE_ENTRIES } from "#/content/home/certificates";
 import { EDUCATION_ENTRIES } from "#/content/home/education";
 
 export const Route = createFileRoute("/")({ component: HomeRoute, ssr: true });
@@ -51,7 +52,18 @@ function HomeRoute() {
         >
           <EntryList items={experienceItems} variant="stacked" />
         </PageSection> */}
-
+        <PageSection
+          id="certificates"
+          title="Certificates"
+          anchorText="#"
+          count={CERTIFICATE_ENTRIES.length}
+        >
+          <BlogList
+            variant="bento"
+            initialVisibleItems={3}
+            items={CERTIFICATE_ENTRIES}
+          />
+        </PageSection>
         <PageSection
           id="education"
           title="Education"
