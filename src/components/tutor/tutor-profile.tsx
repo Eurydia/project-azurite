@@ -1,37 +1,37 @@
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Tooltip from '@mui/material/Tooltip'
-import Typography from '@mui/material/Typography'
-import { CopyTextButton } from '#/components/common/copy-text-button'
-import { ExternalLink } from '#/components/common/external-link'
-import { TutorQualifications } from '#/components/tutor/tutor-qualifications'
-import { TutorTopics } from '#/components/tutor/tutor-topics'
-import type { FC } from 'react'
-import type { TutorProfileContent } from '#/types/tutor'
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
+import { CopyTextButton } from "#/components/actions/copy-text-button";
+import { ExternalLink } from "#/components/text/external-link";
+import { TutorQualifications } from "#/components/tutor/tutor-qualifications";
+import { TutorTopics } from "#/components/tutor/tutor-topics";
+import type { TutorProfileContent } from "#/types/tutor";
 
-const tutorEmail = 'tphuttharaksabusiness@gmail.com'
+const tutorEmail = "tphuttharaksabusiness@gmail.com";
 
 export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
   return (
     <Box
       component="article"
       sx={(theme) => ({
-        minBlockSize: '100dvh',
+        minBlockSize: "100dvh",
         borderBlockStart: `${theme.spacing(1)} solid ${theme.palette.primary.main}`,
       })}
     >
       <Stack spacing={0} useFlexGap>
         <Stack
-          direction={{ xs: 'column', sm: 'row' }}
+          direction={{ xs: "column", sm: "row" }}
           spacing={1}
           useFlexGap
           sx={(theme) => ({
-            alignItems: { xs: 'flex-start', sm: 'baseline' },
-            justifyContent: 'space-between',
+            alignItems: { xs: "flex-start", sm: "baseline" },
+            justifyContent: "space-between",
             marginInline: {
               xs: theme.spacing(2.5),
               sm: theme.spacing(4),
@@ -52,7 +52,7 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
         <Grid
           container
           sx={(theme) => ({
-            alignItems: 'end',
+            alignItems: "end",
             minBlockSize: {
               lg: theme.spacing(60),
             },
@@ -105,7 +105,7 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
                 direction="row"
                 spacing={1}
                 useFlexGap
-                sx={{ alignItems: 'center', flexWrap: 'wrap' }}
+                sx={{ alignItems: "center", flexWrap: "wrap" }}
               >
                 <Typography variant="siteFine" color="textPrimary">
                   {tutorEmail}
@@ -132,7 +132,7 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
         >
           {props.profile.highlights.map((highlight, index) => (
             <Grid
-              size={{ xs: 12, sm: 6, lg: 'grow' }}
+              size={{ xs: 12, sm: 6, lg: "grow" }}
               key={highlight.label}
               sx={(theme) => ({
                 borderBlockStart: {
@@ -216,12 +216,12 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
         />
 
         <Stack
-          direction={{ xs: 'column', sm: 'row' }}
+          direction={{ xs: "column", sm: "row" }}
           spacing={2}
           useFlexGap
           sx={(theme) => ({
-            alignItems: { xs: 'flex-start', sm: 'center' },
-            justifyContent: 'space-between',
+            alignItems: { xs: "flex-start", sm: "center" },
+            justifyContent: "space-between",
             marginInline: {
               xs: theme.spacing(2.5),
               sm: theme.spacing(4),
@@ -242,7 +242,7 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
             direction="row"
             spacing={1}
             useFlexGap
-            sx={{ alignItems: 'center' }}
+            sx={{ alignItems: "center" }}
           >
             <Typography variant="siteFine" color="textSecondary">
               {tutorEmail}
@@ -254,5 +254,5 @@ export const TutorProfile: FC<{ profile: TutorProfileContent }> = (props) => {
         </Stack>
       </Stack>
     </Box>
-  )
-}
+  );
+};

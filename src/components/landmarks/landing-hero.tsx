@@ -1,14 +1,14 @@
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import { TypewriterText } from '#/components/common/typewriter-text'
-import { memo, type FC } from 'react'
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import { type FC, memo } from "react";
+import { TypewriterText } from "#/components/text/typewriter-text";
 
 const PHRASES = [
-  'software engineer.',
-  'Stipendium Hungaricum Scholarship recipient.',
-  'Eötvös Loránd University alumnus.',
-  'ex-tech lead at Google Developer Group on Campus ELTE.',
-]
+  "software engineer.",
+  "Stipendium Hungaricum Scholarship recipient.",
+  "Eötvös Loránd University alumnus.",
+  "ex-tech lead at Google Developer Group on Campus ELTE.",
+];
 
 export const LandingHero: FC = memo(
   () => {
@@ -22,8 +22,8 @@ export const LandingHero: FC = memo(
             variant="siteDisplay"
             color="primary"
             sx={{
-              fontStyle: 'italic',
-              maxWidth: { xs: '100%', md: '85%' },
+              fontStyle: "italic",
+              maxWidth: { xs: "100%", md: "85%" },
               minHeight: (t) => t.spacing(25),
             }}
           >
@@ -35,7 +35,7 @@ export const LandingHero: FC = memo(
           the practical details around deploying and maintaining them.
         </Typography>
       </Stack>
-    )
+    );
   },
   () => false,
-)
+);

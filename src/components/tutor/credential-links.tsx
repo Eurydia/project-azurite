@@ -1,25 +1,25 @@
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import type { ButtonProps } from '@mui/material/Button'
-import type { FC } from 'react'
-import type { TutorSource } from '#/types/tutor'
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import type { ButtonProps } from "@mui/material/Button";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
+import type { TutorSource } from "#/types/tutor";
 
 export const CredentialLinks: FC<{
-  sources: readonly TutorSource[]
-  color?: ButtonProps['color']
+  sources: readonly TutorSource[];
+  color?: ButtonProps["color"];
 }> = (props) => {
   return (
     <Stack
       direction="row"
       spacing={1}
       useFlexGap
-      sx={{ alignItems: 'center', flexWrap: 'wrap' }}
+      sx={{ alignItems: "center", flexWrap: "wrap" }}
     >
       <Typography
         variant="siteMark"
-        color={props.color === 'inherit' ? 'inherit' : 'textSecondary'}
+        color={props.color === "inherit" ? "inherit" : "textSecondary"}
       >
         Credentials
       </Typography>
@@ -31,7 +31,7 @@ export const CredentialLinks: FC<{
           rel="noreferrer"
           variant="text"
           size="small"
-          color={props.color ?? 'primary'}
+          color={props.color ?? "primary"}
           endIcon={<OpenInNewIcon />}
           key={source.href}
         >
@@ -39,5 +39,5 @@ export const CredentialLinks: FC<{
         </Button>
       ))}
     </Stack>
-  )
-}
+  );
+};

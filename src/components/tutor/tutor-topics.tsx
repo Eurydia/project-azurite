@@ -1,7 +1,7 @@
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import type { FC } from 'react'
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
 
 export const TutorTopics: FC<{ topics: readonly string[] }> = (props) => {
   return (
@@ -21,12 +21,12 @@ export const TutorTopics: FC<{ topics: readonly string[] }> = (props) => {
       })}
     >
       <Stack
-        direction={{ xs: 'column', md: 'row' }}
+        direction={{ xs: "column", md: "row" }}
         spacing={1}
         useFlexGap
         sx={{
-          alignItems: { xs: 'flex-start', md: 'baseline' },
-          justifyContent: 'space-between',
+          alignItems: { xs: "flex-start", md: "baseline" },
+          justifyContent: "space-between",
         }}
       >
         <Typography variant="siteSection" color="textPrimary">
@@ -48,7 +48,7 @@ export const TutorTopics: FC<{ topics: readonly string[] }> = (props) => {
               })}
             >
               <Typography variant="siteSmall" color="primary">
-                {String(index + 1).padStart(2, '0')}
+                {String(index + 1).padStart(2, "0")}
               </Typography>
               <Typography variant="siteCopy" color="textPrimary">
                 {topic}
@@ -58,5 +58,5 @@ export const TutorTopics: FC<{ topics: readonly string[] }> = (props) => {
         ))}
       </Grid>
     </Stack>
-  )
-}
+  );
+};

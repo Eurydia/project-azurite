@@ -1,13 +1,13 @@
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { CopyTextButton } from "#/components/common/copy-text-button";
-import { ExternalLink } from "#/components/common/external-link";
-import { memo, useRef, type FC } from "react";
+import { type FC, memo, useRef } from "react";
+import { CopyTextButton } from "#/components/actions/copy-text-button";
+import { ExternalLink } from "#/components/text/external-link";
 import { useFireConfetti } from "#/hooks/use-fire-confetti";
-import Box from "@mui/material/Box";
 
 export const AppFooter: FC = memo(
   () => {
@@ -31,7 +31,7 @@ export const AppFooter: FC = memo(
           justifyContent: "space-between",
         }}
       >
-        <Typography variant="siteSmall" color="textSecondary">
+        <Typography variant="subtitle1" color="textSecondary">
           {`© ${new Date().getFullYear()} Thanakorn Phuttharaksa`}
         </Typography>
         <Stack

@@ -1,143 +1,143 @@
-import '@fontsource-variable/inter/wght.css'
-import '@fontsource-variable/stix-two-text/wght.css'
-import '@fontsource-variable/stix-two-text/wght-italic.css'
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-import CssBaseline from '@mui/material/CssBaseline'
-import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
-import { ThemeProvider } from '@mui/material/styles'
-import { theme } from '../theme'
-import { GridBackground } from '#/components/layout/grid-background'
-import type { ReactNode } from 'react'
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/stix-two-text/wght.css";
+import "@fontsource-variable/stix-two-text/wght-italic.css";
+import CssBaseline from "@mui/material/CssBaseline";
+import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
+import { ThemeProvider } from "@mui/material/styles";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import type { ReactNode } from "react";
+import { GridBackground } from "#/components/layout/grid-background";
+import { theme } from "../theme";
 
-const siteUrl = 'https://eurydia.work/'
-const siteTitle = 'Thanakorn Phuttharaksa | Portfolio'
+const siteUrl = "https://eurydia.work/";
+const siteTitle = "Thanakorn Phuttharaksa | Portfolio";
 const siteDescription =
-  'Software portfolio for Thanakorn Phuttharaksa: maintained systems, finished projects, research notes, experience, education, and certifications.'
-const siteImage = `${siteUrl}logo512.png`
+  "Software portfolio for Thanakorn Phuttharaksa: maintained systems, finished projects, research notes, experience, education, and certifications.";
+const siteImage = `${siteUrl}logo512.png`;
 const structuredData = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Thanakorn Phuttharaksa',
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Thanakorn Phuttharaksa",
   url: siteUrl,
   image: siteImage,
-  sameAs: ['https://github.com/eurydia'],
+  sameAs: ["https://github.com/eurydia"],
   knowsAbout: [
-    'React',
-    'TypeScript',
-    'software engineering',
-    'educational tools',
-    'research software',
-    'web systems',
+    "React",
+    "TypeScript",
+    "software engineering",
+    "educational tools",
+    "research software",
+    "web systems",
   ],
-})
+});
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       {
-        name: 'msvalidate.01',
-        content: '2C963425BF0D92466FAE0F75189D6A6Ax',
+        name: "msvalidate.01",
+        content: "2C963425BF0D92466FAE0F75189D6A6Ax",
       },
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
         title: siteTitle,
       },
       {
-        name: 'description',
+        name: "description",
         content: siteDescription,
       },
       {
-        name: 'author',
-        content: 'Thanakorn Phuttharaksa',
+        name: "author",
+        content: "Thanakorn Phuttharaksa",
       },
       {
-        name: 'robots',
-        content: 'index, follow',
+        name: "robots",
+        content: "index, follow",
       },
       {
-        name: 'theme-color',
-        content: '#fbfaf7',
+        name: "theme-color",
+        content: "#fbfaf7",
       },
       {
-        property: 'og:type',
-        content: 'website',
+        property: "og:type",
+        content: "website",
       },
       {
-        property: 'og:url',
+        property: "og:url",
         content: siteUrl,
       },
       {
-        property: 'og:title',
+        property: "og:title",
         content: siteTitle,
       },
       {
-        property: 'og:description',
+        property: "og:description",
         content: siteDescription,
       },
       {
-        property: 'og:image',
+        property: "og:image",
         content: siteImage,
       },
       {
-        property: 'og:site_name',
-        content: 'Thanakorn Phuttharaksa',
+        property: "og:site_name",
+        content: "Thanakorn Phuttharaksa",
       },
       {
-        name: 'twitter:card',
-        content: 'summary_large_image',
+        name: "twitter:card",
+        content: "summary_large_image",
       },
       {
-        name: 'twitter:title',
+        name: "twitter:title",
         content: siteTitle,
       },
       {
-        name: 'twitter:description',
+        name: "twitter:description",
         content: siteDescription,
       },
       {
-        name: 'twitter:image',
+        name: "twitter:image",
         content: siteImage,
       },
     ],
     links: [
       {
-        rel: 'canonical',
+        rel: "canonical",
         href: siteUrl,
       },
       {
-        rel: 'icon',
-        href: '/favicon.ico',
+        rel: "icon",
+        href: "/favicon.ico",
       },
       {
-        rel: 'apple-touch-icon',
-        href: '/logo192.png',
+        rel: "apple-touch-icon",
+        href: "/logo192.png",
       },
       {
-        rel: 'manifest',
-        href: '/manifest.json',
+        rel: "manifest",
+        href: "/manifest.json",
       },
     ],
     scripts: [
       {
-        type: 'application/ld+json',
+        type: "application/ld+json",
         children: structuredData,
       },
     ],
   }),
   shellComponent: RootDocument,
-})
+});
 
 function RootDocument(props: { children: ReactNode }) {
   return (
-    <html lang={'en'} suppressHydrationWarning>
+    <html lang={"en"} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
@@ -148,11 +148,11 @@ function RootDocument(props: { children: ReactNode }) {
           <GridBackground>{props.children}</GridBackground>
           <TanStackDevtools
             config={{
-              position: 'bottom-right',
+              position: "bottom-right",
             }}
             plugins={[
               {
-                name: 'Tanstack Router',
+                name: "Tanstack Router",
                 render: <TanStackRouterDevtoolsPanel />,
               },
             ]}
@@ -161,5 +161,5 @@ function RootDocument(props: { children: ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

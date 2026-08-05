@@ -1,29 +1,29 @@
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import type { FC } from 'react'
-import { RouterLink } from '#/components/router/router-link'
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
+import { RouterLink } from "#/components/router/router-link";
 
 const navItems = [
   {
-    hash: 'maintained',
-    label: 'Works',
+    hash: "maintained",
+    label: "Works",
   },
   {
-    hash: 'research',
-    label: 'Research',
+    hash: "research",
+    label: "Research",
   },
   {
-    hash: 'education',
-    label: 'Background',
+    hash: "education",
+    label: "Background",
   },
-] as const
+] as const;
 
-export const AppHeader: FC = () => {
+export const AppHeader: FC<{ anchorString: string }> = (props) => {
   return (
     <Stack
       direction={{
-        xs: 'column',
-        sm: 'row',
+        xs: "column",
+        sm: "row",
       }}
       spacing={{
         xs: 1.5,
@@ -31,13 +31,13 @@ export const AppHeader: FC = () => {
       }}
       sx={{
         alignItems: {
-          xs: 'flex-start',
-          sm: 'baseline',
+          xs: "flex-start",
+          sm: "baseline",
         },
-        justifyContent: 'space-between',
+        justifyContent: "space-between",
       }}
     >
-      <Typography variant="siteCopy" color="textPrimary">
+      <Typography variant="subtitle1" color="textPrimary">
         Thanakorn Phuttharaksa
       </Typography>
       <Stack direction="row" spacing={3.5} useFlexGap>
@@ -47,20 +47,20 @@ export const AppHeader: FC = () => {
             hash={() => item.hash}
             key={item.hash}
             underline="always"
-            variant="siteSmall"
+            variant="caption"
             color="textSecondary"
             sx={(theme) => ({
-              textTransform: 'uppercase',
-              transition: theme.transitions.create(['color']),
-              ':hover': {
+              textTransform: "uppercase",
+              transition: theme.transitions.create(["color"]),
+              ":hover": {
                 color: theme.palette.primary.main,
               },
             })}
           >
-            {item.label}
+            {`${props.anchorString}${item.label}`}
           </RouterLink>
         ))}
       </Stack>
     </Stack>
-  )
-}
+  );
+};

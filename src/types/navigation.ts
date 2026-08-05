@@ -1,4 +1,4 @@
 export type SectionNavItem = {
-  id: string
-  label: string
-}
+  id: string;
+  label: string;
+};

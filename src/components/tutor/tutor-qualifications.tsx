@@ -1,15 +1,15 @@
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Tooltip from '@mui/material/Tooltip'
-import Typography from '@mui/material/Typography'
-import { ExternalLink } from '#/components/common/external-link'
-import type { FC } from 'react'
-import type { TutorQualification } from '#/types/tutor'
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
+import { ExternalLink } from "#/components/text/external-link";
+import type { TutorQualification } from "#/types/tutor";
 
 export const TutorQualifications: FC<{
-  heading?: string
-  qualifications: readonly TutorQualification[]
+  heading?: string;
+  qualifications: readonly TutorQualification[];
 }> = (props) => {
   return (
     <Stack
@@ -28,7 +28,7 @@ export const TutorQualifications: FC<{
       })}
     >
       <Typography variant="siteSection" color="textPrimary">
-        {props.heading ?? 'Qualifications'}
+        {props.heading ?? "Qualifications"}
       </Typography>
       <Stack spacing={0} useFlexGap>
         {props.qualifications.map((qualification, index) => (
@@ -36,14 +36,14 @@ export const TutorQualifications: FC<{
             container
             key={qualification.label}
             sx={(theme) => ({
-              alignItems: 'baseline',
+              alignItems: "baseline",
               borderBlockStart: `1px solid ${theme.palette.divider}`,
               paddingBlock: theme.spacing(2.5),
             })}
           >
             <Grid size={{ xs: 2, md: 1 }}>
               <Typography variant="siteSmall" color="primary">
-                {String(index + 1).padStart(2, '0')}
+                {String(index + 1).padStart(2, "0")}
               </Typography>
             </Grid>
             <Grid size={{ xs: 10, md: 3 }}>
@@ -96,5 +96,5 @@ export const TutorQualifications: FC<{
         ))}
       </Stack>
     </Stack>
-  )
-}
+  );
+};

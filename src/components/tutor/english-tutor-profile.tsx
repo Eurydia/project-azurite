@@ -1,39 +1,39 @@
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined'
-import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import { AnchoredHeading } from '#/components/common/anchored-heading'
-import { CopyTextButton } from '#/components/common/copy-text-button'
-import { TutorChapterTab } from '#/components/tutor/tutor-chapter-tab'
-import { TutorEntryCard } from '#/components/tutor/tutor-entry-card'
-import { TutorNotebookFrame } from '#/components/tutor/tutor-notebook-frame'
-import { TutorSubjectGraphic } from '#/components/tutor/tutor-subject-graphic'
-import type { FC } from 'react'
-import type { TutorProfileContent } from '#/types/tutor'
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
+import { CopyTextButton } from "#/components/actions/copy-text-button";
+import { AnchoredHeading } from "#/components/text/anchored-heading";
+import { TutorChapterTab } from "#/components/tutor/tutor-chapter-tab";
+import { TutorEntryCard } from "#/components/tutor/tutor-entry-card";
+import { TutorNotebookFrame } from "#/components/tutor/tutor-notebook-frame";
+import { TutorSubjectGraphic } from "#/components/tutor/tutor-subject-graphic";
+import type { TutorProfileContent } from "#/types/tutor";
 
-const tutorEmail = 'tphuttharaksabusiness@gmail.com'
+const tutorEmail = "tphuttharaksabusiness@gmail.com";
 
 export const EnglishTutorProfile: FC<{
-  profile: TutorProfileContent
+  profile: TutorProfileContent;
 }> = (props) => {
   return (
     <Box
       component="article"
       sx={(theme) => ({
-        minBlockSize: '100dvh',
+        minBlockSize: "100dvh",
         borderBlockStart: `${theme.spacing(1)} solid ${theme.palette.primary.main}`,
       })}
     >
       <TutorNotebookFrame>
         <Stack spacing={0} useFlexGap>
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={{ xs: "column", sm: "row" }}
             spacing={1}
             useFlexGap
             sx={(theme) => ({
-              alignItems: { xs: 'flex-start', sm: 'baseline' },
-              justifyContent: 'space-between',
+              alignItems: { xs: "flex-start", sm: "baseline" },
+              justifyContent: "space-between",
               paddingBlock: theme.spacing(3),
               paddingInline: {
                 xs: theme.spacing(2.5),
@@ -54,8 +54,8 @@ export const EnglishTutorProfile: FC<{
             id="profile"
             container
             sx={(theme) => ({
-              position: 'relative',
-              alignItems: 'end',
+              position: "relative",
+              alignItems: "end",
               paddingBlock: {
                 xs: theme.spacing(7),
                 lg: theme.spacing(12),
@@ -76,7 +76,7 @@ export const EnglishTutorProfile: FC<{
                 <Typography
                   variant="siteDisplay"
                   color="textPrimary"
-                  sx={{ overflowWrap: 'anywhere' }}
+                  sx={{ overflowWrap: "anywhere" }}
                 >
                   {props.profile.title}
                 </Typography>
@@ -113,12 +113,12 @@ export const EnglishTutorProfile: FC<{
                     direction="row"
                     spacing={1}
                     useFlexGap
-                    sx={{ alignItems: 'center', flexWrap: 'wrap', minWidth: 0 }}
+                    sx={{ alignItems: "center", flexWrap: "wrap", minWidth: 0 }}
                   >
                     <Typography
                       variant="siteFine"
                       color="textPrimary"
-                      sx={{ overflowWrap: 'anywhere' }}
+                      sx={{ overflowWrap: "anywhere" }}
                     >
                       {tutorEmail}
                     </Typography>
@@ -135,7 +135,7 @@ export const EnglishTutorProfile: FC<{
             spacing={4}
             useFlexGap
             sx={(theme) => ({
-              position: 'relative',
+              position: "relative",
               backgroundColor: theme.alpha(theme.palette.primary.main, 0.12),
               paddingBlock: {
                 xs: theme.spacing(5),
@@ -178,7 +178,7 @@ export const EnglishTutorProfile: FC<{
                       sx={{ minWidth: 0 }}
                     >
                       <TutorEntryCard
-                        index={String(index + 2).padStart(2, '0')}
+                        index={String(index + 2).padStart(2, "0")}
                         title={highlight.value}
                         body={highlight.label}
                         sources={highlight.sources}
@@ -195,7 +195,7 @@ export const EnglishTutorProfile: FC<{
             spacing={4}
             useFlexGap
             sx={(theme) => ({
-              position: 'relative',
+              position: "relative",
               paddingBlock: {
                 xs: theme.spacing(7),
                 lg: theme.spacing(10),
@@ -223,7 +223,7 @@ export const EnglishTutorProfile: FC<{
                   sx={{ minWidth: 0 }}
                 >
                   <TutorEntryCard
-                    index={String(index + 1).padStart(2, '0')}
+                    index={String(index + 1).padStart(2, "0")}
                     label={qualification.label}
                     title={qualification.value}
                     body={qualification.detail}
@@ -236,12 +236,12 @@ export const EnglishTutorProfile: FC<{
           </Stack>
 
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={{ xs: "column", sm: "row" }}
             spacing={2}
             useFlexGap
             sx={(theme) => ({
-              alignItems: { xs: 'flex-start', sm: 'center' },
-              justifyContent: 'space-between',
+              alignItems: { xs: "flex-start", sm: "center" },
+              justifyContent: "space-between",
               paddingBlock: theme.spacing(3),
               paddingInline: {
                 xs: theme.spacing(2.5),
@@ -266,12 +266,12 @@ export const EnglishTutorProfile: FC<{
               direction="row"
               spacing={1}
               useFlexGap
-              sx={{ alignItems: 'center', minWidth: 0 }}
+              sx={{ alignItems: "center", minWidth: 0 }}
             >
               <Typography
                 variant="siteFine"
                 color="textSecondary"
-                sx={{ overflowWrap: 'anywhere' }}
+                sx={{ overflowWrap: "anywhere" }}
               >
                 {tutorEmail}
               </Typography>
@@ -283,5 +283,5 @@ export const EnglishTutorProfile: FC<{
         </Stack>
       </TutorNotebookFrame>
     </Box>
-  )
-}
+  );
+};

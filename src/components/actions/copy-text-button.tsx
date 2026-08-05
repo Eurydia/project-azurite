@@ -1,8 +1,8 @@
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import { useCallback, useEffect, useRef, useState } from "react";
 import type { FC, PropsWithChildren } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const CopyTextButton: FC<
   PropsWithChildren<{
@@ -37,7 +37,7 @@ export const CopyTextButton: FC<
           setIsCopied(false);
         }, props.feedbackDurationMS ?? 1500);
       });
-  }, [props.text, props.onClick]);
+  }, [props.text, props.onClick, props.feedbackDurationMS]);
 
   return (
     <Tooltip

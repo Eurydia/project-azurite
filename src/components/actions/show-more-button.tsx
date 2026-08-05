@@ -1,14 +1,14 @@
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Button from '@mui/material/Button'
-import type { FC } from 'react'
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Button from "@mui/material/Button";
+import type { FC } from "react";
 
 export const ShowMore: FC<{
-  hiddenCount: number
-  nextVisibleCount: number
-  onClick: () => void
+  hiddenCount: number;
+  nextVisibleCount: number;
+  onClick: () => void;
 }> = (props) => {
   if (props.hiddenCount <= 0) {
-    return null
+    return null;
   }
 
   return (
@@ -25,5 +25,5 @@ export const ShowMore: FC<{
     >
       Show {props.nextVisibleCount} more
     </Button>
-  )
-}
+  );
+};

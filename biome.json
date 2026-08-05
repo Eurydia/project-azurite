@@ -6,20 +6,21 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["src", "!!**/dist"]
+    "includes": ["./src/**"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "includes": ["src"]
+    "includes": ["./src/**"]
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "preset": "recommended"
+      "preset": "recommended",
+      "suspicious": { "noArrayIndexKey": "off" }
     },
-    "includes": ["src"]
+    "includes": ["./src/**"]
   },
   "javascript": {
     "formatter": {

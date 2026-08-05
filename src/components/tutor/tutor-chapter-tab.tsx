@@ -1,19 +1,19 @@
-import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-import type { FC } from 'react'
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import type { FC } from "react";
 
 export const TutorChapterTab: FC<{
-  index: string
-  label: string
-  targetId: string
+  index: string;
+  label: string;
+  targetId: string;
 }> = (props) => {
   return (
     <Link
       href={`#${props.targetId}`}
       underline="none"
       sx={(theme) => ({
-        position: 'absolute',
+        position: "absolute",
         insetBlockStart: theme.spacing(2),
         insetInlineEnd: 0,
         zIndex: 3,
@@ -21,8 +21,8 @@ export const TutorChapterTab: FC<{
         backgroundColor: theme.palette.primary.main,
         paddingBlock: theme.spacing(1),
         paddingInline: theme.spacing(1.5),
-        transition: theme.transitions.create(['padding-inline']),
-        ':hover, :focus-visible': {
+        transition: theme.transitions.create(["padding-inline"]),
+        ":hover, :focus-visible": {
           paddingInline: theme.spacing(2.5),
         },
       })}
@@ -36,5 +36,5 @@ export const TutorChapterTab: FC<{
         </Typography>
       </Stack>
     </Link>
-  )
-}
+  );
+};

@@ -1,14 +1,14 @@
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
-import { createFileRoute } from '@tanstack/react-router'
-import { PageSection } from '#/components/layout/page-section'
-import { EntryList } from '#/components/layout/entry-list'
-import { AppFooter } from '#/components/app-footer'
-import { AppHeader } from '#/components/app-header'
-import { LandingHero } from '#/components/landing/landing-hero'
-import { ComputerScienceDegree } from '#/content/home/education/bsc-degree'
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import { createFileRoute } from "@tanstack/react-router";
+import { AppFooter } from "#/components/app-footer";
+import { AppHeader } from "#/components/app-header";
+import { LandingHero } from "#/components/landmarks/landing-hero";
+import { BlogList } from "#/components/layout/blog-list";
+import { PageSection } from "#/components/layout/page-section";
+import { EDUCATION_ENTRIES } from "#/content/home/education";
 
-export const Route = createFileRoute('/')({ component: HomeRoute, ssr: true })
+export const Route = createFileRoute("/")({ component: HomeRoute, ssr: true });
 
 function HomeRoute() {
   return (
@@ -22,7 +22,7 @@ function HomeRoute() {
       })}
     >
       <Stack spacing={{ xs: 7, md: 9 }}>
-        <AppHeader />
+        <AppHeader anchorString="#" />
         <LandingHero />
         {/* <PageSection id="maintained" title="Projects I maintain">
           <EntryList items={maintainedProjects} variant="stacked" />
@@ -54,17 +54,18 @@ function HomeRoute() {
 
         <PageSection
           id="education"
-          title="Education and certifications"
-          count={3}
+          title="Education"
+          anchorText="#"
+          count={EDUCATION_ENTRIES.length}
         >
-          <EntryList
+          <BlogList
             variant="bento"
             initialVisibleItems={3}
-            items={[<ComputerScienceDegree />]}
+            items={EDUCATION_ENTRIES}
           />
         </PageSection>
         <AppFooter />
       </Stack>
     </Container>
-  )
+  );
 }

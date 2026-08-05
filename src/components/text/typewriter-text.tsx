@@ -1,8 +1,8 @@
-import Typewriter from 'typewriter-effect'
-import type { FC } from 'react'
+import type { FC } from "react";
+import Typewriter from "typewriter-effect";
 
 export const TypewriterText: FC<{
-  phrases: string[]
+  phrases: string[];
 }> = (props) => {
   return (
     <Typewriter
@@ -15,5 +15,5 @@ export const TypewriterText: FC<{
         pauseFor: 2750,
       }}
     />
-  )
-}
+  );
+};
