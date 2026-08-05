@@ -6,6 +6,7 @@ import { AppHeader } from "#/components/app-header";
 import { LandingHero } from "#/components/landmarks/landing-hero";
 import { BlogList } from "#/components/layout/blog-list";
 import { PageSection } from "#/components/layout/page-section";
+import { AWARD_ENTRIES } from "#/content/home/awards";
 import { CERTIFICATE_ENTRIES } from "#/content/home/certificates";
 import { EDUCATION_ENTRIES } from "#/content/home/education";
 
@@ -52,6 +53,15 @@ function HomeRoute() {
         >
           <EntryList items={experienceItems} variant="stacked" />
         </PageSection> */}
+
+        <PageSection
+          id="awards"
+          title="Awards"
+          anchorText="#"
+          count={AWARD_ENTRIES.length}
+        >
+          <BlogList items={AWARD_ENTRIES} variant="stacked" />
+        </PageSection>
         <PageSection
           id="certificates"
           title="Certificates"
@@ -71,7 +81,7 @@ function HomeRoute() {
           count={EDUCATION_ENTRIES.length}
         >
           <BlogList
-            variant="bento"
+            variant="stacked"
             initialVisibleItems={3}
             items={EDUCATION_ENTRIES}
           />

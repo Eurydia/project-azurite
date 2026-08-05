@@ -6,7 +6,7 @@ import { RouterLink } from "../router/router-link";
 export const PageSection: FC<{
   id: string;
   title: string;
-  anchorText?: string;
+  anchorText: string;
   body?: string;
   count: number;
   children: ReactNode;

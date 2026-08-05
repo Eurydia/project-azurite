@@ -30,13 +30,10 @@ export const Certificate$IELTS: FC = memo(
                   deliberately did not prepare for it. Because, well, I wanted
                   to know how proficient I was at English. There is a difference
                   between being good at taking tests and actually being good at
-                  something.
-                </Typography>
-                <Typography color="textSecondary">
-                  I wished I had gotten an overall band of 8.0. I think it is
-                  such a beautiful number. Nonetheless, this assessment helped
-                  me recieved the Stipendium Hungaricum Scholarship. I will be
-                  forever grateful for it.
+                  something. I wished I had gotten an overall band of 8.0. I
+                  think it is such a beautiful number. Nonetheless, this
+                  assessment helped me recieved the Stipendium Hungaricum
+                  Scholarship. I will be forever grateful for it.
                 </Typography>
                 <ZoomableImage src={IELTS_CERT_URL} />
               </Stack>

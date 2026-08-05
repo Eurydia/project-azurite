@@ -22,7 +22,7 @@ export const BlogList: FC<{
         {visibleItems.map((item, index) => (
           <Grid
             key={`item-${index}`}
-            size={{ xs: 2, md: props.variant === "bento" && index < 2 ? 2 : 1 }}
+            size={{ xs: 2, md: props.variant === "bento" && index < 2 ? 1 : 2 }}
           >
             {item()}
           </Grid>
