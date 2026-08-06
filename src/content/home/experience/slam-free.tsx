@@ -6,45 +6,46 @@ import Typography from "@mui/material/Typography";
 import { type FC, memo } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 
-export const Research$Piroska: FC = memo(
+export const Experience$SLAM: FC = memo(
   () => {
     return (
       <BlogCard
-        labelSecondary="May 2025&#8211;October 2025"
+        labelSecondary="July 2025&#8211;January 2026"
         labelPrimary="Eötvös Loránd University, Budapest, Hungary"
       >
         <Stack spacing={2}>
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
-            Combinatorial Analysis of the Card Game Piroska
+            Research Assitant in Vision-based Localization using Keypoint
+            Detection for Toy Following Mobile Robot
           </Typography>
           <Stack spacing={1}>
             <Typography color="textSecondary">
-              Investigated the finiteness of the card game Piroska during
-              internship at ELTE's Department of Computer Algebra.
+              Developed an overhead-camera perception pipeline to localize a
+              mobile robot and surrounding objects within a controlled
+              workspace.
             </Typography>
             <List>
               <ListItem>
                 <ListItemText>
                   <Typography color="textSecondary">
-                    Formalized the game’s states, operations, and transition
-                    function, and proved results for selected cases.
+                    Labeled training images covering varied object positions and
+                    orientations.
                   </Typography>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
                   <Typography color="textSecondary">
-                    Built a simulator and visualizer for decks of up to 28
-                    cards, including finite-state classification and step
-                    counting.
+                    Trained image recognition for changing workspace
+                    arrangements.
                   </Typography>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
                   <Typography color="textSecondary">
-                    Developed a Rust program to identify patterns in initial
-                    states and partially implemented a theorem prover.
+                    Extracted keypoints and published localization data as ROS
+                    messages.
                   </Typography>
                 </ListItemText>
               </ListItem>

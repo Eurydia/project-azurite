@@ -14,7 +14,7 @@ const navItems = [
   },
   {
     hash: "education",
-    label: "Background",
+    label: "Education",
   },
 ] as const;
 

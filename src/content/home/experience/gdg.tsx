@@ -6,46 +6,37 @@ import Typography from "@mui/material/Typography";
 import { type FC, memo } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 
-export const Research$SLAM: FC = memo(
+export const Experience$Gdg: FC = memo(
   () => {
     return (
       <BlogCard
-        labelSecondary="July 2025&#8211;January 2026"
+        labelSecondary="October 2024&#8211;January 2026"
         labelPrimary="Eötvös Loránd University, Budapest, Hungary"
       >
         <Stack spacing={2}>
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
-            Vision-based Localization using Keypoint Detection for Toy Following
-            Mobile Robot
+            Technical Team Leader at Google Developer Group on Campus (ELTE)
           </Typography>
           <Stack spacing={1}>
             <Typography color="textSecondary">
-              Developed an overhead-camera perception pipeline to localize a
-              mobile robot and surrounding objects within a controlled
-              workspace.
+              Selected through an application process and invited to return for
+              the following chapter.
             </Typography>
             <List>
               <ListItem>
                 <ListItemText>
                   <Typography color="textSecondary">
-                    Labeled training images covering varied object positions and
-                    orientations.
+                    Organized the inaugural algorithm contest for 30
+                    participants, including problem design, submissions, and
+                    judging.
                   </Typography>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
                   <Typography color="textSecondary">
-                    Trained image recognition for changing workspace
-                    arrangements.
-                  </Typography>
-                </ListItemText>
-              </ListItem>
-              <ListItem>
-                <ListItemText>
-                  <Typography color="textSecondary">
-                    Extracted keypoints and published localization data as ROS
-                    messages.
+                    Built chapter infrastructure, including the link hub and
+                    groundwork for a retrospective platform.
                   </Typography>
                 </ListItemText>
               </ListItem>

@@ -9,7 +9,7 @@ import { PageSection } from "#/components/layout/page-section";
 import { AWARD_ENTRIES } from "#/content/home/awards";
 import { CERTIFICATE_ENTRIES } from "#/content/home/certificates";
 import { EDUCATION_ENTRIES } from "#/content/home/education";
-import { RESEARCH_ENTRIES } from "#/content/home/research";
+import { EXPERIENCE_ENTRIES } from "#/content/home/experience";
 
 export const Route = createFileRoute("/")({ component: HomeRoute, ssr: true });
 
@@ -48,12 +48,12 @@ function HomeRoute() {
         </PageSection> */}
 
         <PageSection
-          id="research"
-          title="Research"
+          id="experience"
+          title="Experience"
           anchorText="#"
-          count={RESEARCH_ENTRIES.length}
+          count={EXPERIENCE_ENTRIES.length}
         >
-          <BlogList items={RESEARCH_ENTRIES} variant="stacked" />
+          <BlogList items={EXPERIENCE_ENTRIES} variant="stacked" />
         </PageSection>
         <PageSection
           id="awards"
