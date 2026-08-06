@@ -1,10 +1,11 @@
 import "@fontsource-variable/inter/wght.css";
 import "@fontsource-variable/stix-two-text/wght.css";
 import "@fontsource-variable/stix-two-text/wght-italic.css";
+import "@fontsource-variable/noto-serif-thai/wdth.css";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const documentFontFamily =
-  '"STIX Two Text Variable", "STIX Two Text", Georgia, "Times New Roman", serif';
+  '"STIX Two Text Variable", "Noto serif thai variable", Georgia, "Times New Roman", serif';
 
 const uiFontFamily =
   '"Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
@@ -85,6 +86,20 @@ export const theme = responsiveFontSizes(
           },
         },
       },
+      MuiList: {
+        defaultProps: {
+          disablePadding: true,
+          dense: true,
+        },
+        styleOverrides: {
+          root: ({ theme }) => ({
+            paddingLeft: theme.spacing(4),
+            listStyleType: "disc",
+          }),
+        },
+      },
+      MuiListItem: { styleOverrides: { root: { display: "list-item" } } },
+      MuiListItemText: { defaultProps: { disableTypography: true } },
     },
   }),
 );

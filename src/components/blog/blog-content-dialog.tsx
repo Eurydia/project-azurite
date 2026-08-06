@@ -23,7 +23,6 @@ export const BlogContentDialog: FC<
       <Typography
         onClick={handleOpen}
         component={"span"}
-        variant="caption"
         color="primary"
         sx={{ cursor: "pointer" }}
       >

@@ -13,24 +13,20 @@ export const Award$SignMerit: FC = memo(
         labelSecondary="September 2019"
         labelPrimary="Phra Nakhon Si Ayutthaya, Thailand"
       >
-        <Stack spacing={4}>
-          <Stack spacing={2}>
-            <Typography variant="h4" sx={{ fontWeight: 700 }}>
-              {`Sign of Merit`}
+        <Stack spacing={2}>
+          <Typography variant="h4" sx={{ fontWeight: 700 }}>
+            {`Sign of Merit`}
+          </Typography>
+          <Stack spacing={1}>
+            <Typography color="textSecondary">
+              Received Ayutthaya Wittayalai School’s Sign of Merit
+              (เครื่องหมายค่าแห่งคุณธรรม), an annual distinction recognizing
+              exemplary conduct, diligence, selflessness, service, and
+              sportsmanship, in 2019.{" "}
+              <BlogContentDialog triggerText={"See certificate."}>
+                <ZoomableImage src={SIGN_MERIT_URL} />
+              </BlogContentDialog>
             </Typography>
-            <Stack spacing={1}>
-              <Typography color="textSecondary">
-                Received Ayutthaya Wittayalai School’s Sign of Merit
-                (เครื่องหมายค่าแห่งคุณธรรม), an annual distinction recognizing
-                exemplary conduct, diligence, selflessness, service, and
-                sportsmanship, in 2019.
-              </Typography>
-            </Stack>
-          </Stack>
-          <Stack direction={"row"} sx={{ justifyContent: "flex-end" }}>
-            <BlogContentDialog triggerText={"See certificate"}>
-              <ZoomableImage src={SIGN_MERIT_URL} />
-            </BlogContentDialog>
           </Stack>
         </Stack>
       </BlogCard>

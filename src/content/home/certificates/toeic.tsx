@@ -12,18 +12,12 @@ export const Certificate$TOEIC: FC = memo(
     return (
       <BlogCard labelSecondary="July 2026">
         <Stack spacing={2}>
-          <Stack spacing={2}>
-            <Typography variant="h4" sx={{ fontWeight: 700 }}>
-              {`TOEIC English Proficiency Assessment`}
-            </Typography>
-            <Stack spacing={1}>
-              <Typography color="textSecondary">
-                Total score 990/990 (Listening 495/495, Reading 495/495).
-              </Typography>
-            </Stack>
-          </Stack>
-          <Stack direction={"row"} sx={{ justifyContent: "flex-end" }}>
-            <BlogContentDialog triggerText={"See test report"}>
+          <Typography variant="h4" sx={{ fontWeight: 700 }}>
+            {`TOEIC English Proficiency Assessment`}
+          </Typography>
+          <Typography color="textSecondary">
+            Total score 990/990.{" "}
+            <BlogContentDialog triggerText={"See test report."}>
               <Stack spacing={2}>
                 <Typography color="textSecondary">
                   Turns out, all you really need to achieve the perfect score is
@@ -32,14 +26,13 @@ export const Certificate$TOEIC: FC = memo(
                 </Typography>
                 <ZoomableImage src={TOEIC_2026_URL} />
                 <Typography color="textSecondary">
-                  This is my second time taking the exam. I recieved 930/990
-                  (Listening 465/495, Reading 465/495) the first time in 2020.
-                  Wild.
+                  This is my second time taking the exam. I recieved 930/990 the
+                  first time in 2020. Wild.
                 </Typography>
                 <ZoomableImage src={TOEIC_2020_URL} />
               </Stack>
             </BlogContentDialog>
-          </Stack>
+          </Typography>
         </Stack>
       </BlogCard>
     );
