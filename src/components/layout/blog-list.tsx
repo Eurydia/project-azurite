@@ -1,8 +1,9 @@
-import Grid from "@mui/material/Grid";
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
 import Stack from "@mui/material/Stack";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import type { FC, ReactNode } from "react";
-import { ShowMore } from "#/components/actions/show-more-button";
-import { useVisibleItems } from "#/hooks/use-visible-items";
 
 export const BlogList: FC<{
   initialVisibleItems?: number;
@@ -10,29 +11,19 @@ export const BlogList: FC<{
   variant: "stacked" | "bento";
   items: ReadonlyArray<() => ReactNode>;
 }> = (props) => {
-  const { hiddenCount, nextVisibleCount, showMore, visibleItems } =
-    useVisibleItems(props.items, {
-      initialVisibleItems: props.initialVisibleItems,
-      visibleItemIncrement: props.visibleItemIncrement,
-    });
-
-  return (
+  const t = useTheme();
+  const isXS = useMediaQuery(t.breakpoints.down("sm"));
+  return props.variant === "stacked" ? (
     <Stack spacing={3}>
-      <Grid container spacing={3} columns={2}>
-        {visibleItems.map((item, index) => (
-          <Grid
-            key={`item-${index}`}
-            size={{ xs: 2, md: props.variant === "bento" && index < 2 ? 1 : 2 }}
-          >
-            {item()}
-          </Grid>
-        ))}
-      </Grid>
-      <ShowMore
-        hiddenCount={hiddenCount}
-        nextVisibleCount={nextVisibleCount}
-        onClick={showMore}
-      />
+      {props.items.map((item, index) => (
+        <ImageListItem key={`item-${index}`}>{item()}</ImageListItem>
+      ))}
     </Stack>
+  ) : (
+    <ImageList cols={isXS ? 1 : 2} variant="masonry" gap={24}>
+      {props.items.map((item, index) => (
+        <ImageListItem key={`item-${index}`}>{item()}</ImageListItem>
+      ))}
+    </ImageList>
   );
 };
