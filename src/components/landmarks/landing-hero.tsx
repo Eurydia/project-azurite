@@ -46,5 +46,5 @@ export const LandingHero: FC = memo(
       </Stack>
     );
   },
-  () => false,
+  () => true,
 );

@@ -46,5 +46,5 @@ export const Experience$Gdg: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

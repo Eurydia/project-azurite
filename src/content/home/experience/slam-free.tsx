@@ -55,5 +55,5 @@ export const Experience$SLAM: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

@@ -28,5 +28,5 @@ export const Education$BSc: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

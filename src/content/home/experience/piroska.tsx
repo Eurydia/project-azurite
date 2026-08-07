@@ -54,5 +54,5 @@ export const Experience$Piroska: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

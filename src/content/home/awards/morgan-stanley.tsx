@@ -29,5 +29,5 @@ export const Award$MorganStanley: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

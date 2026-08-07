@@ -37,5 +37,5 @@ export const Certificate$TOEIC: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

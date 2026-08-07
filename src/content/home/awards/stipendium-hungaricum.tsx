@@ -29,5 +29,5 @@ export const Award$StipendiumHungaricum: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

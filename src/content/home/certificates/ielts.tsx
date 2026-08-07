@@ -36,5 +36,5 @@ export const Certificate$IELTS: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

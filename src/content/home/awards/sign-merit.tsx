@@ -32,5 +32,5 @@ export const Award$SignMerit: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );

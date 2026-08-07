@@ -61,5 +61,5 @@ export const AppFooter: FC = memo(
       </Stack>
     );
   },
-  () => false,
+  () => true,
 );

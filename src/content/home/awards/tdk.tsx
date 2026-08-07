@@ -28,5 +28,5 @@ export const Award$Tdk: FC = memo(
       </BlogCard>
     );
   },
-  () => false,
+  () => true,
 );
