@@ -4,7 +4,7 @@ import { type FC, memo } from "react";
 import TOEIC_2020_URL from "#/assets/blogs/certificates/toeic-2020.jpg?url";
 import TOEIC_2026_URL from "#/assets/blogs/certificates/toeic-2026.jpg?url";
 import { BlogCard } from "#/components/blog/blog-card";
-import { BlogContentDialog } from "#/components/blog/blog-content-dialog";
+import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 import { ZoomableImage } from "#/components/blog/zoomable-image";
 
 export const Certificate$TOEIC: FC = memo(
@@ -17,7 +17,7 @@ export const Certificate$TOEIC: FC = memo(
           </Typography>
           <Typography color="textSecondary">
             Total score 990/990.{" "}
-            <BlogContentDialog triggerText={"See test report."}>
+            <BlogContentNavigation triggerText={"See test report."}>
               <Stack spacing={2}>
                 <Typography color="textSecondary">
                   Turns out, all you really need to achieve the perfect score is
@@ -31,7 +31,7 @@ export const Certificate$TOEIC: FC = memo(
                 </Typography>
                 <ZoomableImage src={TOEIC_2020_URL} />
               </Stack>
-            </BlogContentDialog>
+            </BlogContentNavigation>
           </Typography>
         </Stack>
       </BlogCard>

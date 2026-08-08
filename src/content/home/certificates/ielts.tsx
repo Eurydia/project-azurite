@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { type FC, memo } from "react";
 import IELTS_CERT_URL from "#/assets/blogs/certificates/ielts.jpg?url";
 import { BlogCard } from "#/components/blog/blog-card";
-import { BlogContentDialog } from "#/components/blog/blog-content-dialog";
+import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 import { ZoomableImage } from "#/components/blog/zoomable-image";
 
 export const Certificate$IELTS: FC = memo(
@@ -14,11 +14,11 @@ export const Certificate$IELTS: FC = memo(
           <Typography variant="h4" sx={{ fontWeight: 700 }}>
             {`IELTS English Proficiency Assessment (Academic)`}
           </Typography>
-          <Typography color="textSecondary" component={"p"}>
+          <Typography color="textSecondary">
             Overall band 7.5/9.0.{" "}
-            <BlogContentDialog triggerText={"See test report"}>
+            <BlogContentNavigation triggerText={"See test report"}>
               <Stack spacing={2}>
-                <Typography color="textSecondary" component={"p"}>
+                <Typography color="textSecondary">
                   This was my first time taking the assessment and I
                   deliberately did not prepare for it. Because, well, I wanted
                   to know how proficient I was at English. There is a difference
@@ -30,7 +30,7 @@ export const Certificate$IELTS: FC = memo(
                 </Typography>
                 <ZoomableImage src={IELTS_CERT_URL} />
               </Stack>
-            </BlogContentDialog>
+            </BlogContentNavigation>
           </Typography>
         </Stack>
       </BlogCard>

@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import { type FC, memo } from "react";
 import SIGN_MERIT_URL from "#/assets/blogs/awards/sign-merit.png?url";
 import { BlogCard } from "#/components/blog/blog-card";
-import { BlogContentDialog } from "#/components/blog/blog-content-dialog";
+import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 import { ZoomableImage } from "#/components/blog/zoomable-image";
 
 export const Award$SignMerit: FC = memo(
@@ -23,9 +23,9 @@ export const Award$SignMerit: FC = memo(
               (เครื่องหมายค่าแห่งคุณธรรม), an annual distinction recognizing
               exemplary conduct, diligence, selflessness, service, and
               sportsmanship, in 2019.{" "}
-              <BlogContentDialog triggerText={"See certificate."}>
+              <BlogContentNavigation triggerText={"See certificate."}>
                 <ZoomableImage src={SIGN_MERIT_URL} />
-              </BlogContentDialog>
+              </BlogContentNavigation>
             </Typography>
           </Stack>
         </Stack>
