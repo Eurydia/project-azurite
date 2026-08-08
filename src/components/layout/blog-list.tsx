@@ -14,13 +14,18 @@ export const BlogList: FC<{
   const t = useTheme();
   const isXS = useMediaQuery(t.breakpoints.down("sm"));
   return props.variant === "stacked" ? (
-    <Stack spacing={3}>
+    <Stack spacing={3} sx={{ paddingX: 1 }}>
       {props.items.map((item, index) => (
         <ImageListItem key={`item-${index}`}>{item()}</ImageListItem>
       ))}
     </Stack>
   ) : (
-    <ImageList cols={isXS ? 1 : 2} variant="masonry" gap={24}>
+    <ImageList
+      cols={isXS ? 1 : 2}
+      variant="masonry"
+      gap={24}
+      sx={{ paddingX: 1 }}
+    >
       {props.items.map((item, index) => (
         <ImageListItem key={`item-${index}`}>{item()}</ImageListItem>
       ))}
