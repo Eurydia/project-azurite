@@ -7,7 +7,7 @@ const pageTitle = "Programming Tutor | Thanakorn Phuttharaksa";
 const pageDescription =
   "Programming tutoring for high-school students from an honors computer science graduate and former functional programming teaching assistant.";
 
-export const Route = createFileRoute("/tutor-programming")({
+export const Route = createFileRoute("/_tutor-programming")({
   component: TutorProgrammingRoute,
   ssr: true,
   head: () => ({

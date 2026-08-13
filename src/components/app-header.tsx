@@ -5,12 +5,12 @@ import { RouterLink } from "#/components/router/router-link";
 
 const navItems = [
   {
-    hash: "maintained",
-    label: "Works",
+    hash: "projects",
+    label: "Projects",
   },
   {
-    hash: "research",
-    label: "Research",
+    hash: "experience",
+    label: "Experience",
   },
   {
     hash: "education",

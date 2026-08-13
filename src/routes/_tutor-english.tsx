@@ -7,7 +7,7 @@ const pageTitle = "English Tutor | Thanakorn Phuttharaksa";
 const pageDescription =
   "English tutoring for Mathayom students, supported by IELTS, TOEIC, and O-NET results.";
 
-export const Route = createFileRoute("/tutor-english")({
+export const Route = createFileRoute("/_tutor-english")({
   component: TutorEnglishRoute,
   ssr: true,
   head: () => ({

@@ -7,7 +7,7 @@ const pageTitle = "Mathematics Tutor | Thanakorn Phuttharaksa";
 const pageDescription =
   "Mathematics tutoring for Mathayom students, supported by verified O-NET results and an honors computer science degree.";
 
-export const Route = createFileRoute("/tutor-math")({
+export const Route = createFileRoute("/_tutor-math")({
   component: TutorMathRoute,
   ssr: true,
   head: () => ({

@@ -1,10 +1,8 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import CloseIcon from "@mui/icons-material/Close";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import IconButton from "@mui/material/IconButton";
-import Stack from "@mui/material/Stack";
 import { useTheme } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { type FC, type ReactNode, useCallback, useMemo, useState } from "react";
 import {
@@ -51,24 +49,26 @@ export const BlogContentNavigationDialog: FC<{
         onClose={close}
         scroll="body"
       >
-        <Stack
-          direction="row"
-          sx={{
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+        <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
           {history.length > 1 ? (
-            <IconButton onClick={goBack}>
-              <ArrowBackIcon />
-            </IconButton>
+            <Typography
+              sx={{ cursor: "pointer" }}
+              color="primary"
+              onClick={goBack}
+            >
+              Back
+            </Typography>
           ) : (
             <span />
           )}
-          <IconButton onClick={close}>
-            <CloseIcon />
-          </IconButton>
-        </Stack>
+          <Typography
+            sx={{ cursor: "pointer" }}
+            color="primary"
+            onClick={close}
+          >
+            Close
+          </Typography>
+        </Toolbar>
         <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
           {history.at(-1)}
         </DialogContent>

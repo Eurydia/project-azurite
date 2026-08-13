@@ -63,7 +63,7 @@ export const PageSection: FC<{
           </Typography>
         </Stack>
         {props.count !== undefined && (
-          <Typography variant="caption" color="textDisabled">
+          <Typography variant="subtitle1" color="textDisabled">
             {`${String(props.count).padStart(2, "0")} ${props.count === 1 ? "entry" : "entries"}`}
           </Typography>
         )}
