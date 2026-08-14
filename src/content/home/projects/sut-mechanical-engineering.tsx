@@ -1,10 +1,10 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 
-export const Project$SutMechanicalEngineering: FC = memo(() => {
+export const Project$SutMechanicalEngineering: FC = () => {
   return (
     <BlogCard
       labelPrimary="Suranaree University of Technology"
@@ -62,4 +62,4 @@ export const Project$SutMechanicalEngineering: FC = memo(() => {
       </Stack>
     </BlogCard>
   );
-});
+};

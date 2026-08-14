@@ -1,14 +1,15 @@
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
+import Container from "@mui/material/Container";
 
-export const Project$GeometricTransformationVisualizer: FC = memo(() => {
+export const Project$GeometricTransformationVisualizer: FC = () => {
   return (
     <BlogCard
-      labelPrimary="Ayutthaya Witthayalai School"
+      labelPrimary="Department of Mathematics, Ayutthaya Witthayalai School"
       labelSecondary="June 2025–July 2026"
     >
       <Stack spacing={2.5}>
@@ -20,83 +21,34 @@ export const Project$GeometricTransformationVisualizer: FC = memo(() => {
           by Desmos graphing engine.
         </Typography>
         <BlogContentNavigation triggerText="Read case study">
-          <Stack spacing={4} sx={{ maxWidth: 800, marginInline: "auto" }}>
-            <Stack spacing={1.5}>
-              <Typography variant="overline" color="textDisabled">
-                Commissioned classroom tool · June 2025–July 2026
-              </Typography>
+          <Container maxWidth="md">
+            <Stack spacing={4}>
               <Typography variant="h3" sx={{ fontWeight: 700 }}>
                 Geometric Transformation Visualizer
               </Typography>
-              <Typography variant="h6" color="textSecondary">
-                Translation, rotation, and reflection made adjustable enough for
-                an entire classroom to follow.
+
+              <Typography color="textSecondary">
+                To give a bit of a backstory, I have developed this project as
+                part of a suite of educational tools for Ayutthaya Witthayalai
+                Scholl (AYW). This project was one of the two initial requests
+                made by the Department of Mathematics with the other request
+                being the Statistics Calculator. Of the two, this project was a
+                lot more fun to build, partly because this was a perfect
+                opportunity for me to try out Desmos' graphing engine.
+              </Typography>
+              <Typography color="textSecondary">
+                While collecting the requirements and scope for this project, I
+                knew I had to address a major wall that would surely stop this
+                project in its track which was the matter of "presentation." The
+                heart of this project was to accept some data from the user, the
+                perform some geometric transformation on the data, and display
+                the transformation back. For all intents and purposes, the first
+                two were not as much of a hurdle to deal with.
               </Typography>
             </Stack>
-            <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <Stack
-                  spacing={0.5}
-                  sx={(theme) => ({
-                    border: `1px solid ${theme.palette.divider}`,
-                    height: "100%",
-                    padding: 2.5,
-                  })}
-                >
-                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                    ~150
-                  </Typography>
-                  <Typography color="textSecondary">
-                    students reached through classroom adoption
-                  </Typography>
-                </Stack>
-              </Grid>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <Stack
-                  spacing={0.5}
-                  sx={(theme) => ({
-                    border: `1px solid ${theme.palette.divider}`,
-                    height: "100%",
-                    padding: 2.5,
-                  })}
-                >
-                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                    3
-                  </Typography>
-                  <Typography color="textSecondary">
-                    transformations in one teaching surface
-                  </Typography>
-                </Stack>
-              </Grid>
-            </Grid>
-            <Typography color="textSecondary">
-              Ayutthaya Witthayalai School&apos;s Mathematics Department
-              commissioned the tool for Mathayom 2 instruction. Desmos owns the
-              graphing surface; React owns the parameter controls and classroom
-              flow.
-            </Typography>
-            <Typography color="textSecondary">
-              The first prototype had no graph. Desmos integration then added
-              multi-point transformation and polygon drawing, with follow-up
-              fixes for vertex ordering and negative-zero output.
-            </Typography>
-            <Typography color="textSecondary">
-              Translation, rotation, and reflection later became separate
-              validated routes with dedicated graph-state hooks. Formula and
-              property explanations sit beside the interactive result instead of
-              remaining in external lesson material.
-            </Typography>
-            <Typography color="textSecondary">
-              A 2026 maintenance pass unified the form schemas and rebuilt the
-              interface around a scrapbook-style teaching layout while keeping
-              the original three-transformation scope.
-            </Typography>
-            <Typography variant="body2" color="textDisabled">
-              Vite, TypeScript, React, MUI, TanStack Form, Desmos, Zod
-            </Typography>
-          </Stack>
+          </Container>
         </BlogContentNavigation>
       </Stack>
     </BlogCard>
   );
-});
+};

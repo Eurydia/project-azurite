@@ -1,3 +1,5 @@
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import KeyboardBackspaceRoundedIcon from "@mui/icons-material/KeyboardBackspaceRounded";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import { useTheme } from "@mui/material/styles";
@@ -9,6 +11,8 @@ import {
   BlogContentNavigationContext,
   type BlogContentNavigationContextValue,
 } from "#/contexts/blog-content-navigation-context";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 
 export const BlogContentNavigationDialog: FC<{
   children: (navigation: BlogContentNavigationContextValue) => ReactNode;
@@ -51,23 +55,18 @@ export const BlogContentNavigationDialog: FC<{
       >
         <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
           {history.length > 1 ? (
-            <Typography
-              sx={{ cursor: "pointer" }}
-              color="primary"
+            <Button
               onClick={goBack}
+              startIcon={<KeyboardBackspaceRoundedIcon />}
             >
               Back
-            </Typography>
+            </Button>
           ) : (
             <span />
           )}
-          <Typography
-            sx={{ cursor: "pointer" }}
-            color="primary"
-            onClick={close}
-          >
-            Close
-          </Typography>
+          <IconButton color="primary" onClick={close}>
+            <CloseRoundedIcon />
+          </IconButton>
         </Toolbar>
         <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
           {history.at(-1)}

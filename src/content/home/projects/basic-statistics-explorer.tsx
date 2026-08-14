@@ -1,11 +1,11 @@
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 
-export const Project$BasicStatisticsExplorer: FC = memo(() => {
+export const Project$BasicStatisticsExplorer: FC = () => {
   return (
     <BlogCard
       labelPrimary="Ayutthaya Witthayalai School"
@@ -85,4 +85,4 @@ export const Project$BasicStatisticsExplorer: FC = memo(() => {
       </Stack>
     </BlogCard>
   );
-});
+};

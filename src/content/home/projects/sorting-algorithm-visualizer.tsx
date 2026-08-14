@@ -1,10 +1,10 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 
-export const Project$SortingAlgorithmVisualizer: FC = memo(() => {
+export const Project$SortingAlgorithmVisualizer: FC = () => {
   return (
     <BlogCard labelSecondary="2023–2026">
       <Stack spacing={2.5}>
@@ -67,4 +67,4 @@ export const Project$SortingAlgorithmVisualizer: FC = memo(() => {
       </Stack>
     </BlogCard>
   );
-});
+};

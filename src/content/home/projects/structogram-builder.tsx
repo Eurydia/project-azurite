@@ -1,10 +1,10 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 
-export const Project$StructogramBuilder: FC = memo(() => {
+export const Project$StructogramBuilder: FC = () => {
   return (
     <BlogCard labelSecondary="November 2023–July 2026">
       <Stack spacing={2.5}>
@@ -69,4 +69,4 @@ export const Project$StructogramBuilder: FC = memo(() => {
       </Stack>
     </BlogCard>
   );
-});
+};

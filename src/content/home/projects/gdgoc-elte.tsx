@@ -1,10 +1,10 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { type FC, memo } from "react";
+import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 
-export const Project$GdgocElte: FC = memo(() => {
+export const Project$GdgocElte: FC = () => {
   return (
     <BlogCard
       labelPrimary="Google Developer Groups on Campus ELTE"
@@ -63,4 +63,4 @@ export const Project$GdgocElte: FC = memo(() => {
       </Stack>
     </BlogCard>
   );
-});
+};

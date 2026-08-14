@@ -24,7 +24,7 @@ export const BlogList: FC<{
       cols={isXS ? 1 : 2}
       variant="masonry"
       gap={24}
-      sx={{ paddingX: 1 }}
+      sx={{ padding: 1 }}
     >
       {props.items.map((item, index) => (
         <ImageListItem key={`item-${index}`}>{item()}</ImageListItem>
