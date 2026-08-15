@@ -4,12 +4,12 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import { CopyTextButton } from "#/components/actions/copy-text-button";
 import { AnchoredHeading } from "#/components/text/anchored-heading";
 import { TutorChapterTab } from "#/components/tutor/tutor-chapter-tab";
 import { TutorEntryCard } from "#/components/tutor/tutor-entry-card";
 import { TutorNotebookFrame } from "#/components/tutor/tutor-notebook-frame";
 import { TutorSubjectGraphic } from "#/components/tutor/tutor-subject-graphic";
+import { CopyTextButton } from "#/components/ui/copy-text-button";
 import type { TutorProfileContent } from "#/types/tutor";
 
 const tutorEmail = "tphuttharaksabusiness@gmail.com";

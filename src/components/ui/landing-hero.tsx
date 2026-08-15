@@ -1,7 +1,7 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import { TypewriterText } from "#/components/text/typewriter-text";
+import { TypewriterText } from "#/components/ui/typewriter-text";
 
 const PHRASES = [
   "software engineer.",

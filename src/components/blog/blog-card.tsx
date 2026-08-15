@@ -40,7 +40,7 @@ export const BlogCard: FC<
           <Box
             sx={(t) => ({
               flex: 1,
-              borderBlockStart: `1px solid ${t.palette.divider}`,
+              borderbottom: `1px solid ${t.palette.divider}`,
             })}
           />
           <Typography variant="caption" color="textDisabled">

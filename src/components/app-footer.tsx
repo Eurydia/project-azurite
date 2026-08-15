@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { type FC, useRef } from "react";
-import { CopyTextButton } from "#/components/actions/copy-text-button";
-import { ExternalLink } from "#/components/text/external-link";
+import { CopyTextButton } from "#/components/ui/copy-text-button";
+import { ExternalLink } from "#/components/ui/external-link";
 import { useFireConfetti } from "#/hooks/use-fire-confetti";
 
 export const AppFooter: FC = () => {

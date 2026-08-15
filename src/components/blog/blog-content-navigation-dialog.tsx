@@ -1,62 +1,37 @@
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import KeyboardBackspaceRoundedIcon from "@mui/icons-material/KeyboardBackspaceRounded";
+import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
+import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { type FC, type ReactNode, useCallback, useMemo, useState } from "react";
-import {
-  BlogContentNavigationContext,
-  type BlogContentNavigationContextValue,
-} from "#/contexts/blog-content-navigation-context";
-import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
+import type { FC, PropsWithChildren } from "react";
+import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
 
-export const BlogContentNavigationDialog: FC<{
-  children: (navigation: BlogContentNavigationContextValue) => ReactNode;
-}> = ({ children }) => {
+export const BlogContentNavigationDialog: FC<PropsWithChildren> = ({
+  children,
+}) => {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
-  const [isOpen, setIsOpen] = useState(false);
-  const [history, setHistory] = useState<ReactNode[]>([]);
-
-  const navigate = useCallback(
-    (content: ReactNode) => {
-      setHistory((currentHistory) =>
-        isOpen ? [...currentHistory, content] : [content],
-      );
-      setIsOpen(true);
-    },
-    [isOpen],
-  );
-
-  const close = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const goBack = useCallback(() => {
-    setHistory((currentHistory) => currentHistory.slice(0, -1));
-  }, []);
-
-  const navigation = useMemo(() => ({ navigate }), [navigate]);
+  const blogNav = useBlogContentNavigation();
 
   return (
-    <BlogContentNavigationContext value={navigation}>
-      {children(navigation)}
+    <>
+      {children}
       <Dialog
         fullScreen={fullScreen}
         fullWidth
         maxWidth="lg"
-        open={isOpen}
-        onClose={close}
+        open={blogNav.isOpen}
+        onClose={blogNav.onClose}
         scroll="body"
       >
         <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
           {history.length > 1 ? (
             <Button
-              onClick={goBack}
+              onClick={blogNav.onGoBack}
               startIcon={<KeyboardBackspaceRoundedIcon />}
             >
               Back
@@ -69,9 +44,9 @@ export const BlogContentNavigationDialog: FC<{
           </IconButton>
         </Toolbar>
         <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
-          {history.at(-1)}
+          {blogNav.isOpen && blogNav.element}
         </DialogContent>
       </Dialog>
-    </BlogContentNavigationContext>
+    </>
   );
 };

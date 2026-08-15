@@ -7,10 +7,10 @@ import Stack from "@mui/material/Stack";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import { CopyTextButton } from "#/components/actions/copy-text-button";
-import { ExternalLink } from "#/components/text/external-link";
 import { TutorQualifications } from "#/components/tutor/tutor-qualifications";
 import { TutorTopics } from "#/components/tutor/tutor-topics";
+import { CopyTextButton } from "#/components/ui/copy-text-button";
+import { ExternalLink } from "#/components/ui/external-link";
 import type { TutorProfileContent } from "#/types/tutor";
 
 const tutorEmail = "tphuttharaksabusiness@gmail.com";

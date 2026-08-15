@@ -1,11 +1,11 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { ThemeProvider } from "@mui/material/styles";
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import type { ReactNode } from "react";
 import { GridBackground } from "#/components/layout/grid-background";
+import { BlogContentNavigationContext } from "#/contexts/blog-content-navigation-context";
+import { useBlogContentNavigationManager } from "#/hooks/use-blog-content-nagivation-manager";
 import { theme } from "../theme";
 
 const siteUrl = "https://eurydia.work/";
@@ -133,27 +133,19 @@ export const Route = createRootRoute({
 });
 
 function RootDocument(props: { children: ReactNode }) {
+  const navManager = useBlogContentNavigationManager();
   return (
-    <html lang={"en"} suppressHydrationWarning>
+    <html lang={"en"}>
       <head>
         <HeadContent />
       </head>
       <body>
         <InitColorSchemeScript attribute="class" defaultMode="system" />
         <ThemeProvider theme={theme} defaultMode="light">
-          <CssBaseline enableColorScheme />
-          <GridBackground>{props.children}</GridBackground>
-          <TanStackDevtools
-            config={{
-              position: "bottom-right",
-            }}
-            plugins={[
-              {
-                name: "Tanstack Router",
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-            ]}
-          />
+          <CssBaseline />
+          <BlogContentNavigationContext.Provider value={navManager}>
+            <GridBackground>{props.children}</GridBackground>
+          </BlogContentNavigationContext.Provider>
         </ThemeProvider>
         <Scripts />
       </body>

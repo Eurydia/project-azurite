@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
-import { ExternalLink } from "#/components/text/external-link";
+import { ExternalLink } from "#/components/ui/external-link";
 import type { TutorQualification } from "#/types/tutor";
 
 export const TutorQualifications: FC<{
