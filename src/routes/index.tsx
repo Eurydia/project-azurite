@@ -6,11 +6,11 @@ import { AppHeader } from "#/components/ui/app-header";
 import { BlogList } from "#/components/layout/blog-list";
 import { PageSection } from "#/components/layout/page-section";
 import { LandingHero } from "#/components/ui/landing-hero";
-import { AWARD_ENTRIES } from "#/content/home/awards";
-import { CERTIFICATE_ENTRIES } from "#/content/home/certificates";
-import { EDUCATION_ENTRIES } from "#/content/home/education";
-import { EXPERIENCE_ENTRIES } from "#/content/home/experience";
-import { BUILT_PROJECT_ENTRIES } from "#/content/home/projects";
+import { AWARD_ENTRIES } from "#/content/portfolio/awards";
+import { CERTIFICATE_ENTRIES } from "#/content/portfolio/certificates";
+import { EDUCATION_ENTRIES } from "#/content/portfolio/education";
+import { EXPERIENCE_ENTRIES } from "#/content/portfolio/experience";
+import { BUILT_PROJECT_ENTRIES } from "#/content/portfolio/projects";
 
 export const Route = createFileRoute("/")({ component: HomeRoute, ssr: true });
 

@@ -10,43 +10,38 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import type { FC, PropsWithChildren } from "react";
 import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
 
-export const BlogContentNavigationDialog: FC<PropsWithChildren> = ({
-  children,
-}) => {
+export const BlogContentNavigationDialog: FC<PropsWithChildren> = () => {
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const blogNav = useBlogContentNavigation();
 
   return (
-    <>
-      {children}
-      <Dialog
-        fullScreen={fullScreen}
-        fullWidth
-        maxWidth="lg"
-        open={blogNav.isOpen}
-        onClose={blogNav.onClose}
-        scroll="body"
-      >
-        <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
-          {history.length > 1 ? (
-            <Button
-              onClick={blogNav.onGoBack}
-              startIcon={<KeyboardBackspaceRoundedIcon />}
-            >
-              Back
-            </Button>
-          ) : (
-            <span />
-          )}
-          <IconButton color="primary" onClick={close}>
-            <CloseRoundedIcon />
-          </IconButton>
-        </Toolbar>
-        <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
-          {blogNav.isOpen && blogNav.element}
-        </DialogContent>
-      </Dialog>
-    </>
+    <Dialog
+      fullScreen={fullScreen}
+      fullWidth
+      maxWidth="lg"
+      open={blogNav.isOpen}
+      onClose={blogNav.onClose}
+      scroll="body"
+    >
+      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        {blogNav.canGoBack ? (
+          <Button
+            onClick={blogNav.onGoBack}
+            startIcon={<KeyboardBackspaceRoundedIcon />}
+          >
+            Back
+          </Button>
+        ) : (
+          <span />
+        )}
+        <IconButton color="primary" onClick={blogNav.onClose}>
+          <CloseRoundedIcon />
+        </IconButton>
+      </Toolbar>
+      <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
+        {blogNav.element}
+      </DialogContent>
+    </Dialog>
   );
 };

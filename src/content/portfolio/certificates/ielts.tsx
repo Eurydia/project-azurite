@@ -15,7 +15,7 @@ export const Certificate$IELTS: FC = () => {
         </Typography>
         <Typography color="textSecondary">
           Overall band 7.5/9.0.{" "}
-          <BlogContentNavigation triggerText={"See test report"}>
+          <BlogContentNavigation triggerText={"See test report."}>
             <Stack spacing={2}>
               <Typography color="textSecondary">
                 This was my first time taking the assessment and I deliberately

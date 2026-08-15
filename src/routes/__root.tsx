@@ -7,6 +7,7 @@ import { GridBackground } from "#/components/layout/grid-background";
 import { BlogContentNavigationContext } from "#/contexts/blog-content-navigation-context";
 import { useBlogContentNavigationManager } from "#/hooks/use-blog-content-nagivation-manager";
 import { theme } from "../theme";
+import { BlogContentNavigationDialog } from "#/components/blog/blog-content-navigation-dialog";
 
 const siteUrl = "https://eurydia.work/";
 const siteTitle = "Thanakorn Phuttharaksa | Portfolio";
@@ -135,7 +136,7 @@ export const Route = createRootRoute({
 function RootDocument(props: { children: ReactNode }) {
   const navManager = useBlogContentNavigationManager();
   return (
-    <html lang={"en"}>
+    <html lang={"en"} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
@@ -145,6 +146,7 @@ function RootDocument(props: { children: ReactNode }) {
           <CssBaseline />
           <BlogContentNavigationContext.Provider value={navManager}>
             <GridBackground>{props.children}</GridBackground>
+            <BlogContentNavigationDialog />
           </BlogContentNavigationContext.Provider>
         </ThemeProvider>
         <Scripts />

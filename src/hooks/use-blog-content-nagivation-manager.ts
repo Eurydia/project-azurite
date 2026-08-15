@@ -29,5 +29,6 @@ export const useBlogContentNavigationManager = () => {
     onNavigate,
     isOpen,
     element: historyState.at(-1) ?? null,
-  } satisfies BlogContentNavigationContextValue;
+    canGoBack: historyState.length > 1,
+  } as BlogContentNavigationContextValue;
 };

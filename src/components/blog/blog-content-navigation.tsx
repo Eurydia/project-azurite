@@ -7,10 +7,10 @@ export const BlogContentNavigation: FC<
     triggerText: string;
   }>
 > = (props) => {
-  const { navigate } = useBlogContentNavigation();
+  const { onNavigate } = useBlogContentNavigation();
   const handleNavigate = useCallback(() => {
-    navigate(props.children);
-  }, [navigate, props.children]);
+    onNavigate(props.children);
+  }, [onNavigate, props.children]);
 
   return (
     <Typography

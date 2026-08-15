@@ -4,7 +4,10 @@ export type BlogContentNavigationContextValue = {
   onNavigate: (content: ReactNode) => unknown;
   onClose: () => unknown;
   onGoBack: () => unknown;
-} & ({ isOpen: false } | { isOpen: true; element: ReactNode });
+  isOpen: boolean;
+  canGoBack: boolean;
+  element: ReactNode | null;
+};
 
 export const BlogContentNavigationContext =
   createContext<BlogContentNavigationContextValue | null>(null);
