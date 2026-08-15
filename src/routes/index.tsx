@@ -1,8 +1,8 @@
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import { createFileRoute } from "@tanstack/react-router";
-import { AppFooter } from "#/components/app-footer";
-import { AppHeader } from "#/components/app-header";
+import { AppFooter } from "#/components/ui/app-footer";
+import { AppHeader } from "#/components/ui/app-header";
 import { BlogList } from "#/components/layout/blog-list";
 import { PageSection } from "#/components/layout/page-section";
 import { LandingHero } from "#/components/ui/landing-hero";
