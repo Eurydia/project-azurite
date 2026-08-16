@@ -9,6 +9,7 @@ import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import type { FC, PropsWithChildren } from "react";
 import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
+import Container from "@mui/material/Container";
 
 export const BlogContentNavigationDialog: FC<PropsWithChildren> = () => {
   const theme = useTheme();
@@ -19,7 +20,7 @@ export const BlogContentNavigationDialog: FC<PropsWithChildren> = () => {
     <Dialog
       fullScreen={fullScreen}
       fullWidth
-      maxWidth="lg"
+      maxWidth="md"
       open={blogNav.isOpen}
       onClose={blogNav.onClose}
       scroll="body"
@@ -35,12 +36,12 @@ export const BlogContentNavigationDialog: FC<PropsWithChildren> = () => {
         ) : (
           <span />
         )}
-        <IconButton color="primary" onClick={blogNav.onClose}>
+        <IconButton color="default" onClick={blogNav.onClose}>
           <CloseRoundedIcon />
         </IconButton>
       </Toolbar>
-      <DialogContent dividers sx={{ padding: { xs: 2.5, sm: 4 } }}>
-        {blogNav.element}
+      <DialogContent sx={{ padding: { xs: 2.5, sm: 4 } }}>
+        <Container maxWidth="md">{blogNav.element}</Container>
       </DialogContent>
     </Dialog>
   );

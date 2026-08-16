@@ -40,10 +40,14 @@ export const BlogCard: FC<
           <Box
             sx={(t) => ({
               flex: 1,
-              borderbottom: `1px solid ${t.palette.divider}`,
+              borderBottom: `1px solid ${t.palette.divider}`,
             })}
           />
-          <Typography variant="caption" color="textDisabled">
+          <Typography
+            variant="caption"
+            color="textDisabled"
+            sx={{ textAlign: "right" }}
+          >
             {props.labelSecondary ?? ""}
           </Typography>
         </Stack>

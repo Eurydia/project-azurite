@@ -1,8 +1,11 @@
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
+import { BlogContentNavigationDialog } from "#/components/blog/blog-content-navigation-dialog";
+import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
+import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
 
 const __Content: FC = () => {
   return (
@@ -31,6 +34,12 @@ const __Content: FC = () => {
 };
 
 export const Project$GeometricTransformationVisualizer: FC = () => {
+  const nav = useBlogContentNavigation();
+
+  useEffect(() => {
+    nav.onNavigate(<__Content />);
+  }, []);
+
   return (
     <BlogCard
       labelPrimary="Department of Mathematics, Ayutthaya Witthayalai School"
@@ -42,7 +51,10 @@ export const Project$GeometricTransformationVisualizer: FC = () => {
         </Typography>
         <Typography color="textSecondary">
           Classroom visualizer for translation, rotation, and reflection powered
-          by Desmos graphing engine.
+          by Desmos graphing engine.{" "}
+          <BlogContentNavigation triggerText="Read more.">
+            {<__Content />}
+          </BlogContentNavigation>
         </Typography>
       </Stack>
     </BlogCard>

@@ -17,6 +17,9 @@ export const Certificate$IELTS: FC = () => {
           Overall band 7.5/9.0.{" "}
           <BlogContentNavigation triggerText={"See test report."}>
             <Stack spacing={2}>
+              <Typography variant="h4" sx={{ fontWeight: 700 }}>
+                {`IELTS English Proficiency Assessment (Academic)`}
+              </Typography>
               <Typography color="textSecondary">
                 This was my first time taking the assessment and I deliberately
                 did not prepare for it. Because, well, I wanted to know how
