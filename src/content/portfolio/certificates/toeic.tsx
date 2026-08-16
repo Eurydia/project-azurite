@@ -6,7 +6,6 @@ import TOEIC_2026_URL from "#/assets/blogs/certificates/toeic-2026.jpg?url";
 import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 import { ZoomableImage } from "#/components/blog/zoomable-image";
-import Container from "@mui/material/Container";
 
 export const Certificate$TOEIC: FC = () => {
   return (

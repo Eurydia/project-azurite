@@ -3,11 +3,11 @@ import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import { ThemeProvider } from "@mui/material/styles";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { BlogContentNavigationDialog } from "#/components/blog/blog-content-navigation-dialog";
 import { GridBackground } from "#/components/layout/grid-background";
 import { BlogContentNavigationContext } from "#/contexts/blog-content-navigation-context";
 import { useBlogContentNavigationManager } from "#/hooks/use-blog-content-nagivation-manager";
 import { theme } from "../theme";
-import { BlogContentNavigationDialog } from "#/components/blog/blog-content-navigation-dialog";
 
 const siteUrl = "https://eurydia.work/";
 const siteTitle = "Thanakorn Phuttharaksa | Portfolio";

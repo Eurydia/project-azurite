@@ -1,6 +1,7 @@
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import KeyboardBackspaceRoundedIcon from "@mui/icons-material/KeyboardBackspaceRounded";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
@@ -9,7 +10,6 @@ import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import type { FC, PropsWithChildren } from "react";
 import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
-import Container from "@mui/material/Container";
 
 export const BlogContentNavigationDialog: FC<PropsWithChildren> = () => {
   const theme = useTheme();
