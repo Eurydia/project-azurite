@@ -1,3 +1,4 @@
+import translationImageUrl from "#/assets/blogs/projects/geotransviz/translation.png?url";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -6,6 +7,7 @@ import { BlogCard } from "#/components/blog/blog-card";
 import { BlogContentNavigationDialog } from "#/components/blog/blog-content-navigation-dialog";
 import { BlogContentNavigation } from "#/components/blog/blog-content-navigation";
 import { useBlogContentNavigation } from "#/hooks/use-blog-content-navigation";
+import { ZoomableImage } from "#/components/blog/zoomable-image";
 
 const __Content: FC = () => {
   return (
@@ -14,19 +16,31 @@ const __Content: FC = () => {
         <Typography variant="h3" sx={{ fontWeight: 700 }}>
           Geometric Transformation Visualizer
         </Typography>
-
-        <Typography color="textSecondary">
-          To give a bit of a backstory, I have developed this project as part of
-          a suite of educational tools for Ayutthaya Witthayalai Scholl (AYW).
-          This project was one of the two initial requests made by the
-          Department of Mathematics with the other request being the Statistics
-          Calculator. Of the two, this project was a lot more fun to build,
-          partly because this was a perfect opportunity for me to try out
-          Desmos' graphing engine.
+        <Typography>
+          I have developed this project as a part of a suite of educational
+          tools for Ayutthaya Witthayalai Scholl (AYW). This project was one of
+          the two initial requests made by the Department of Mathematics. This
+          project was a lot more fun to build.
         </Typography>
-        <Typography color="textSecondary">
-          The presentation would be crucial for this project. I figured what
-          would be better than using a proper 2D graphing engine for the visual.
+        <ZoomableImage src={translationImageUrl} />
+        <Typography>
+          The bread and butter of this project is the integration with Desmos.
+          The project supports three types of transformation on a 2D plane;
+          translation, rotation and reflection. The underlying implementation
+          uses a similar pattern.
+        </Typography>
+        <Typography>
+          We accept the user input, we apply some validation and clean up the
+          data to make sure that it is valid. Then, we take these data and
+          create a lot of Desmos expressions under the hood. These Desmos
+          expressions are the boundary between our application and Desmos. All
+          we need to do now is to display the Desmos graph itself and we are
+          ready.
+        </Typography>
+        <Typography>
+          There are a lot of magic and workaround to ensure that the
+          expressions, the graph and the user data stay in sync. But in the end,
+          the project turned out even better than I imagined.
         </Typography>
       </Stack>
     </Container>
