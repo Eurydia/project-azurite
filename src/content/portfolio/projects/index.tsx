@@ -1,6 +1,7 @@
 import { Project$Amber } from "./amber";
-import { Project$Edu$GeoTransViz } from "./geotransviz.edu";
-import { Project$Edu$MotionViz } from "./motionbiz.edu";
+import { Project$Edu$GeoTransViz } from "./edu/geotransviz";
+import { Project$Edu$MotionViz } from "./edu/motionviz";
+import { Project$Edu$StatViz } from "./edu/statviz";
 import { Project$SutMechanicalEngineering } from "./sut-mechanical-engineering";
 
 export const FEATURED_PROJECT_ENTRIES = [
@@ -11,15 +12,15 @@ export const FEATURED_PROJECT_ENTRIES = [
 
 export const BUILT_PROJECT_ENTRIES = [
   () => <Project$Edu$MotionViz />,
-  // () => <Project$Ametrine />,
+  () => <Project$Edu$StatViz />,
   () => <Project$Edu$GeoTransViz />,
+  // () => <Project$Ametrine />,
   // () => <Project$StructogramBuilder />,
   // () => <Project$Ruby />,
   // () => <Project$Agate />,
   // () => <Project$Onyx />,
   // () => <Project$Amber />,
   // () => <Project$Andalusite />,
-  // () => <Project$BasicStatisticsExplorer />,
   // () => <Project$SupplyAndDemandExplorer />,
   // () => <Project$DspCalculator />,
   // () => <Project$SortingAlgorithmVisualizer />,

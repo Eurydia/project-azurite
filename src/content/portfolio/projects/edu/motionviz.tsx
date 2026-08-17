@@ -14,7 +14,11 @@ export const Project$Edu$MotionViz: FC = () => {
         <Typography variant="h4" sx={{ fontWeight: 700 }}>
           Motion Simulator Lab
         </Typography>
-        <Typography sx={{ fontStyle: "italic" }} color="textDisabled">
+        <Typography
+          sx={{ fontStyle: "italic" }}
+          color="textDisabled"
+          variant="subtitle2"
+        >
           Commissionwork
         </Typography>
         <Typography color="textSecondary">
