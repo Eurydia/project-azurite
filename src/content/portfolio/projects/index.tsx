@@ -1,6 +1,6 @@
 import { Project$Amber } from "./amber";
-import { Project$Edu$GeoTransViz } from "./geometric-transformation-visualizer";
-import { Project$Edu$MotionViz } from "./simple-motion-visualizer";
+import { Project$Edu$GeoTransViz } from "./geotransviz.edu";
+import { Project$Edu$MotionViz } from "./motionbiz.edu";
 import { Project$SutMechanicalEngineering } from "./sut-mechanical-engineering";
 
 export const FEATURED_PROJECT_ENTRIES = [
