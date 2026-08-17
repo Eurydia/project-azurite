@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -37,12 +36,6 @@ export const BlogCard: FC<
           <Typography variant="caption" color="textDisabled">
             {props.labelPrimary ?? ""}
           </Typography>
-          <Box
-            sx={(t) => ({
-              flex: 1,
-              borderBottom: `1px solid ${t.palette.divider}`,
-            })}
-          />
           <Typography
             variant="caption"
             color="textDisabled"

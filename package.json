@@ -30,6 +30,7 @@
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.168.30",
     "canvas-confetti": "^1.9.4",
+    "prism-react-renderer": "^2.4.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-medium-image-zoom": "^5.4.9",

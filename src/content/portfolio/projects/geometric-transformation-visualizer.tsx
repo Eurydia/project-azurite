@@ -1,9 +1,8 @@
-import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
-import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
+import { ExternalLinkAnchor } from "#/components/ui/external-link-anchor";
 
 // const __Content: FC = () => {
 //   return (
@@ -43,7 +42,7 @@ import { BlogCard } from "#/components/blog/blog-card";
 //   );
 // };
 
-export const Project$GeometricTransformationVisualizer: FC = () => {
+export const Project$Edu$GeoTransViz: FC = () => {
   return (
     <BlogCard
       labelPrimary="Department of Mathematics, Ayutthaya Witthayalai School"
@@ -64,22 +63,9 @@ export const Project$GeometricTransformationVisualizer: FC = () => {
           Educational visualizer for geometric transformation on a coodinate
           plane powered by Desmos graphing engine. Supports translation,
           rotation, and reflection.{" "}
-          <Typography
-            color="textSecondary"
-            sx={{
-              fontSize: "inherit",
-              alignItems: "center",
-              justifyContent: "center",
-              display: "inline-flex",
-              flexDirection: "row",
-            }}
-            component={Link}
-            href="https://geotransviz.eurydia.work"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            See the work <OpenInNewRoundedIcon fontSize="inherit" />
-          </Typography>
+          <ExternalLinkAnchor href="https://geotransviz.eurydia.work">
+            See the work
+          </ExternalLinkAnchor>
         </Typography>
       </Stack>
     </BlogCard>
