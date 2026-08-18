@@ -16,7 +16,7 @@ export const BlogList: FC<{
       ))}
     </Stack>
   ) : (
-    <Grid container columns={{ xs: 1, sm: 2 }} spacing={3}>
+    <Grid container columns={{ xs: 1, md: 2 }} spacing={3}>
       <Grid size={1}>
         <Stack spacing={3}>
           {props.items

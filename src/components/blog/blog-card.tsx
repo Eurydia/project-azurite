@@ -29,17 +29,21 @@ export const BlogCard: FC<
           direction="row"
           spacing={1}
           sx={{
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "space-between",
           }}
         >
-          <Typography variant="caption" color="textDisabled">
+          <Typography
+            variant="caption"
+            color="textDisabled"
+            sx={{ flexGrow: 2 }}
+          >
             {props.labelPrimary ?? ""}
           </Typography>
           <Typography
             variant="caption"
             color="textDisabled"
-            sx={{ textAlign: "right" }}
+            sx={{ textAlign: "right", flexGrow: 1 }}
           >
             {props.labelSecondary ?? ""}
           </Typography>

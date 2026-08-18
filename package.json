@@ -11,8 +11,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "pnpm run build && wrangler deploy",
-    "check": "pnpx @biomejs/biome check --write --unsafe",
-    "typecheck": "pnpm tsc --noEmit"
+    "check": "biome check --write --unsafe",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
