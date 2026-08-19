@@ -26,7 +26,7 @@ function HomeRoute() {
       })}
     >
       <Stack spacing={{ xs: 7, md: 9 }}>
-        <AppHeader anchorString="#" />
+        <AppHeader />
         <LandingHero />
 
         <PageSection id="projects" title="Projects" anchorText="#" count={0}>

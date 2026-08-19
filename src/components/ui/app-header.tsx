@@ -51,11 +51,9 @@ export const AppHeader: FC = () => {
             color="textSecondary"
             sx={(theme) => ({
               textTransform: "uppercase",
-              transition: theme.transitions.create(["color", "fontWeight"]),
-
+              transition: theme.transitions.create(["color"]),
               ":hover": {
                 color: theme.palette.primary.main,
-                fontWeight: 700,
               },
             })}
           >
