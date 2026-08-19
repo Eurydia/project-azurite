@@ -6,8 +6,8 @@ import { BlogCard } from "#/components/blog/blog-card";
 export const Education$BSc: FC = () => {
   return (
     <BlogCard
-      labelSecondary="August 2022 — February 2026"
-      labelPrimary="Eötvös Loránd University, Budapest, Hungary"
+      labelSecondary={"August 2022\u{2013}February 2026"}
+      labelPrimary="Eötvös Loránd University, Hungary"
     >
       <Stack spacing={2}>
         <Typography variant="h4" sx={{ fontWeight: 700 }}>

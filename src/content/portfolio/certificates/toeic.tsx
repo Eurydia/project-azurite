@@ -9,7 +9,10 @@ import { ZoomableImage } from "#/components/blog/zoomable-image";
 
 export const Certificate$TOEIC: FC = () => {
   return (
-    <BlogCard labelSecondary="July 2026">
+    <BlogCard
+      labelSecondary="July 2026"
+      labelPrimary="Center for Professional Assessment, Thailand"
+    >
       <Stack spacing={2}>
         <Typography variant="h4" sx={{ fontWeight: 700 }}>
           {`TOEIC English Proficiency Assessment`}

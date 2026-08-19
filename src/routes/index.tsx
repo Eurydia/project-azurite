@@ -47,7 +47,7 @@ function HomeRoute() {
           anchorText="#"
           count={AWARD_ENTRIES.length}
         >
-          <BlogList items={AWARD_ENTRIES} variant="stacked" />
+          <BlogList items={AWARD_ENTRIES} variant="bento" />
         </PageSection>
         <PageSection
           id="certificates"
@@ -56,7 +56,7 @@ function HomeRoute() {
           count={CERTIFICATE_ENTRIES.length}
         >
           <BlogList
-            variant="bento"
+            variant="stacked"
             initialVisibleItems={3}
             items={CERTIFICATE_ENTRIES}
           />

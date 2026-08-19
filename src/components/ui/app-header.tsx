@@ -18,7 +18,7 @@ const navItems = [
   },
 ] as const;
 
-export const AppHeader: FC<{ anchorString: string }> = (props) => {
+export const AppHeader: FC = () => {
   return (
     <Stack
       direction={{
@@ -51,13 +51,15 @@ export const AppHeader: FC<{ anchorString: string }> = (props) => {
             color="textSecondary"
             sx={(theme) => ({
               textTransform: "uppercase",
-              transition: theme.transitions.create(["color"]),
+              transition: theme.transitions.create(["color", "fontWeight"]),
+
               ":hover": {
                 color: theme.palette.primary.main,
+                fontWeight: 700,
               },
             })}
           >
-            {`${props.anchorString}${item.label}`}
+            {item.label}
           </RouterLink>
         ))}
       </Stack>

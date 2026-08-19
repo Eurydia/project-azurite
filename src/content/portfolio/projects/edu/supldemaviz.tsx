@@ -2,7 +2,6 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { FC } from "react";
 import { BlogCard } from "#/components/blog/blog-card";
-import { ExternalLink } from "#/components/ui/external-link";
 import { ExternalLinkAnchor } from "#/components/ui/external-link-anchor";
 
 export const Project$Edu$SuplDemaViz: FC = () => {
