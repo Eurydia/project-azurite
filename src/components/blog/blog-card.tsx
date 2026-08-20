@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -28,27 +27,27 @@ export const BlogCard: FC<
       <Stack spacing={3}>
         <Stack
           direction="row"
-          spacing={1}
           sx={{
-            alignItems: "center",
-            justifyContent: "space-between",
+            alignItems: "flex-start",
+            justifyContent: "flex-end",
           }}
         >
-          <Box
-            sx={{
-              borderTopColor: (t) => t.palette.divider,
-              borderTopStyle: "solid",
-              borderTopWidth: 1,
-              flex: 1,
-            }}
-          />
-          <Typography
-            variant="caption"
-            color="textDisabled"
-            sx={{ textAlign: "right" }}
-          >
-            {props.labelSecondary ?? ""}
-          </Typography>
+          <Stack spacing={0.5}>
+            <Typography
+              variant="caption"
+              color="textDisabled"
+              sx={{ textAlign: "right" }}
+            >
+              {props.labelSecondary}
+            </Typography>
+            <Typography
+              variant="caption"
+              color="textDisabled"
+              sx={{ textAlign: "right" }}
+            >
+              {props.labelPrimary}
+            </Typography>
+          </Stack>
         </Stack>
         {props.children}
       </Stack>

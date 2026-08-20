@@ -50,7 +50,7 @@ export const AppHeader: FC = () => {
             variant="caption"
             color="textSecondary"
             sx={(theme) => ({
-              textTransform: "uppercase",
+              textTransform: "capitalize",
               transition: theme.transitions.create(["color"]),
               ":hover": {
                 color: theme.palette.primary.main,

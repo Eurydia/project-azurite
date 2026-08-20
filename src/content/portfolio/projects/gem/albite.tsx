@@ -22,7 +22,7 @@ export const Project$Gem$Albite: FC = () => {
           This feature was an incredible addition that complets this project in
           my opinion.{" "}
           <ExternalLinkAnchor href="https://eurydia.github.io/project-albite/">
-            See the playground.
+            See the playground
           </ExternalLinkAnchor>
         </Typography>
       </Stack>
