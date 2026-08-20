@@ -30,7 +30,7 @@ function HomeRoute() {
         <LandingHero />
 
         <PageSection id="projects" title="Projects" anchorText="#" count={0}>
-          <BlogList variant="bento" items={BUILT_PROJECT_ENTRIES} />
+          <BlogList variant="stacked" items={BUILT_PROJECT_ENTRIES} />
         </PageSection>
 
         <PageSection

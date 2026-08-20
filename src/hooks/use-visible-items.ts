@@ -1,26 +1,50 @@
-import { useState } from "react";
-
-type UseVisibleItemsOptions = {
-  initialVisibleItems?: number;
-  visibleItemIncrement?: number;
-};
+import { useCallback, useMemo, useState } from "react";
 
 export const useVisibleItems = <T>(
   items: readonly T[],
-  options?: UseVisibleItemsOptions,
+  options?: Partial<{
+    initialVisibleItems: number;
+    visibleItemIncrement: number;
+  }>,
 ) => {
-  const initialVisibleItems = options?.initialVisibleItems ?? 2;
-  const visibleItemIncrement = options?.visibleItemIncrement ?? 5;
-  const [visibleCount, setVisibleCount] = useState(initialVisibleItems);
-  const visibleItems = items.slice(0, visibleCount);
-  const hiddenCount = items.length - visibleItems.length;
-  const nextVisibleCount = Math.min(hiddenCount, visibleItemIncrement);
+  const { initialVisibleItems, visibleItemIncrement } = useMemo(() => {
+    return {
+      initialVisibleItems: options?.initialVisibleItems ?? 5,
+      visibleItemIncrement: options?.visibleItemIncrement ?? 4,
+    };
+  }, [options]);
 
-  const showMore = () => {
-    setVisibleCount((currentCount) =>
-      Math.min(items.length, currentCount + visibleItemIncrement),
+  const [currentVisibleCount, setCurrentVisibleCount] =
+    useState(initialVisibleItems);
+
+  const canShowMore = useMemo(() => {
+    return items.length > currentVisibleCount;
+  }, [currentVisibleCount, items.length]);
+
+  const canShowLess = useMemo(() => {
+    return currentVisibleCount > initialVisibleItems;
+  }, [currentVisibleCount, initialVisibleItems]);
+
+  const showMore = useCallback(() => {
+    setCurrentVisibleCount((prev) =>
+      Math.min(items.length, prev + visibleItemIncrement),
     );
-  };
+  }, [items, visibleItemIncrement]);
 
-  return { hiddenCount, nextVisibleCount, showMore, visibleItems };
+  const showLess = useCallback(() => {
+    setCurrentVisibleCount((prev) =>
+      Math.max(initialVisibleItems, prev - visibleItemIncrement),
+    );
+  }, [visibleItemIncrement, initialVisibleItems]);
+
+  const visibleItems = useMemo(
+    () =>
+      items.map((item, index) => ({
+        item,
+        visible: index < currentVisibleCount,
+      })),
+    [items, currentVisibleCount],
+  );
+
+  return { visibleItems, showMore, showLess, canShowLess, canShowMore };
 };
