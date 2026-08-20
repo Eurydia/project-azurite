@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -20,7 +21,7 @@ export const BlogCard: FC<
         transition: theme.transitions.create(["border-color", "box-shadow"]),
         ":hover": {
           borderColor: theme.alpha(theme.palette.primary.main, 0.72),
-          boxShadow: `${theme.spacing(0.5)} ${theme.spacing(0.5)} 0 ${theme.palette.primary.main}`,
+          boxShadow: `${theme.spacing(1)} ${theme.spacing(1)} 0 ${theme.palette.primary.main}`,
         },
       })}
     >
@@ -29,21 +30,22 @@ export const BlogCard: FC<
           direction="row"
           spacing={1}
           sx={{
-            alignItems: "flex-start",
+            alignItems: "center",
             justifyContent: "space-between",
           }}
         >
+          <Box
+            sx={{
+              borderTopColor: (t) => t.palette.divider,
+              borderTopStyle: "solid",
+              borderTopWidth: 1,
+              flex: 1,
+            }}
+          />
           <Typography
             variant="caption"
             color="textDisabled"
-            sx={{ flexGrow: 2 }}
-          >
-            {props.labelPrimary ?? ""}
-          </Typography>
-          <Typography
-            variant="caption"
-            color="textDisabled"
-            sx={{ textAlign: "right", flexGrow: 1 }}
+            sx={{ textAlign: "right" }}
           >
             {props.labelSecondary ?? ""}
           </Typography>

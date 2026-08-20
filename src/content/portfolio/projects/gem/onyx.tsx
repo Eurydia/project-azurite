@@ -6,7 +6,7 @@ import { ExternalLinkAnchor } from "#/components/ui/external-link-anchor";
 
 export const Project$Gem$Onyx: FC = () => {
   return (
-    <BlogCard labelSecondary={"November 2023\u{2103}August 2026"}>
+    <BlogCard labelSecondary={"November 2023\u{2013}August 2026"}>
       <Stack spacing={2.5}>
         <Typography variant="h4" sx={{ fontWeight: 700 }}>
           Interactive Boolean Algebra Playground

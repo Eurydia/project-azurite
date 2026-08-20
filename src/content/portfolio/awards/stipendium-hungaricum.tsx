@@ -6,7 +6,7 @@ import { BlogCard } from "#/components/blog/blog-card";
 export const Award$StipendiumHungaricum: FC = () => {
   return (
     <BlogCard
-      labelSecondary="August 2022 – February 2026"
+      labelSecondary={"August 2022\u{2013}February 2026"}
       labelPrimary="Budapest, Hungary"
     >
       <Stack spacing={4}>

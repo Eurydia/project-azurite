@@ -7,6 +7,7 @@ import { Project$Edu$SuplDemaViz } from "./edu/supldemaviz";
 import { Project$SutMechanicalEngineering } from "./sut-mechanical-engineering";
 import { Project$Gem$Andalusite } from "./gem/andalusite";
 import { Project$Gem$Onyx } from "./gem/onyx";
+import { Project$Gem$Albite } from "./albite";
 
 export const FEATURED_PROJECT_ENTRIES = [
   () => <Project$SutMechanicalEngineering />,
@@ -22,11 +23,11 @@ export const BUILT_PROJECT_ENTRIES = [
   () => <Project$Gem$Ametrine />,
   () => <Project$Gem$Andalusite />,
   () => <Project$Gem$Onyx />,
+  () => <Project$Gem$Albite />,
   // () => <Project$StructogramBuilder />,
   // () => <Project$Ruby />,
   // () => <Project$Agate />,
   // () => <Project$Amber />,
   // () => <Project$DspCalculator />,
-  // () => <Project$SortingAlgorithmVisualizer />,
   // () => <Project$Amethyst />,
 ] as const;
